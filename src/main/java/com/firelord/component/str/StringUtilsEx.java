@@ -36,7 +36,7 @@ public class StringUtilsEx {
 	// #region hex
 
 	/**
-	 * @param str
+	 * @param bArray bArray
 	 * @return 二进制数组转换为二进制字符串 2-2
 	 */
 	public static String bytes2BinStr(byte[] bArray) {
@@ -54,7 +54,7 @@ public class StringUtilsEx {
 	}
 
 	/**
-	 * @param bytes
+	 * @param bytes bytes
 	 * @return 将二进制数组转换为十六进制字符串 2-16
 	 */
 	public static String bin2HexStr(byte[] bytes) {
@@ -71,7 +71,7 @@ public class StringUtilsEx {
 	}
 
 	/**
-	 * @param hexString
+	 * @param hexString hexString
 	 * @return 将十六进制转换为二进制字节数组 16-2
 	 */
 	public static byte[] hexStr2BinArr(String hexString) {
@@ -90,20 +90,20 @@ public class StringUtilsEx {
 	}
 
 	/**
-	 * new:16->10
+	 * new:16 to 10
 	 * 
-	 * @param strSrc
-	 * @return
+	 * @param strSrc strSrc
+	 * @return int
 	 */
 	public static int hexStr2Dec(String strSrc) {
 		return Integer.parseInt(strSrc, 16);
 	}
 
 	/**
-	 * new:16->2
+	 * new:16 to 2
 	 * 
-	 * @param hexString
-	 * @return
+	 * @param hexString hexString
+	 * @return String
 	 */
 	public static String hexStr2bitStr(String hexString) {
 		if (hexString == null || hexString.length() % 2 != 0)
@@ -117,20 +117,20 @@ public class StringUtilsEx {
 	}
 
 	/**
-	 * new:16->Long
+	 * new:16 to Long
 	 * 
-	 * @param hexString
-	 * @return
+	 * @param hexString hexString
+	 * @return String
 	 */
 	public static String hexStr2LongStr(String hexString) {
 		return String.valueOf(Long.parseLong(hexString, 16));
 	}
 
 	/**
-	 * new:16->Float
+	 * new:16 to Float
 	 * 
-	 * @param hexString
-	 * @return
+	 * @param hexString hexString
+	 * @return String
 	 */
 	public static String hexStr2FloatStr(String hexString) {
 		Long iTmp = Long.parseLong(hexString, 16);
@@ -140,9 +140,9 @@ public class StringUtilsEx {
 	}
 
 	/**
-	 * TODO:16进制->有符号10
+	 * TODO:16进制 to 有符号10
 	 * 
-	 * @return
+	 * @return String
 	 */
 	public static String hexStr2SignDecStr() {
 		return null;

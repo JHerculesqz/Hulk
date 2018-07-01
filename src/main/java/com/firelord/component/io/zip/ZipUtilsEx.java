@@ -58,9 +58,9 @@ public class ZipUtilsEx {
 	/**
 	 * 潜规则：SpringBoot的FatJar里面的Jar必须是NO_COMPRESSION
 	 * 
-	 * @param strFilePath4Zip
-	 * @param strFilePathRelative4Unpack
-	 * @param strFilePath4Replace
+	 * @param strFilePath4Zip strFilePath4Zip
+	 * @param strFilePathRelative4Unpack strFilePathRelative4Unpack
+	 * @param strFilePath4Replace strFilePath4Replace
 	 */
 	public static void replaceJar4SpringBoot(String strFilePath4Zip, String strFilePathRelative4Unpack,
 			String strFilePath4Replace) {

@@ -47,7 +47,7 @@ public class FTPUtilsEx {
 	 *            /a/b/c/1.zip
 	 * @param strDirPath4Download
 	 *            C:\\download\zombie1
-	 * @return
+	 * @return boolean
 	 */
 	public static boolean downloadFile(String strHostname, int iPort, String strUserName, String strPassword,
 			String strFilePathRelativeOnFTP, String strDirPath4Download) {

@@ -175,7 +175,7 @@ public class ProcessUtilsEx {
 	/**
 	 * TODO:待验证
 	 * 
-	 * @param strProcessName
+	 * @param strProcessName strProcessName
 	 */
 	public static void killProcessByName(String strProcessName) {
 		try {
@@ -189,7 +189,7 @@ public class ProcessUtilsEx {
 	/**
 	 * TODO:待验证
 	 * 
-	 * @param strProcessName
+	 * @param strProcessName strProcessName
 	 */
 	public static void killProcessByNameExcludeName(String strProcessName, String strExcludeProcessTitle) {
 		try {
@@ -237,9 +237,8 @@ public class ProcessUtilsEx {
 	/**
 	 * runByShell 新打开一个控制台窗口执行传入的命令
 	 * 
-	 * @param strCmd
-	 * @param strArgs
-	 * @return
+	 * @param strCmd strCmd
+	 * @param  strArgs strArgs
 	 */
 	public static void runByShellAsyn(String strCmd, String strArgs) {
 		try {
@@ -259,8 +258,8 @@ public class ProcessUtilsEx {
 	/**
 	 * TODO：待验证
 	 * 
-	 * @param strCmd
-	 * @param strArgs
+	 * @param strCmd strCmd
+	 * @param strArgs strArgs
 	 */
 	public static void runByShellSyn(String strCmd, String strArgs) {
 		try {

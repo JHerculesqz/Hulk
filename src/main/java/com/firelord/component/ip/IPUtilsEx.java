@@ -18,7 +18,7 @@ public class IPUtilsEx {
 	/**
 	 * deal with 127.0.0.1:49130 or [::]:135 or *:*
 	 * 
-	 * @param strAddress
+	 * @param strAddress strAddress
 	 * @return IPAddressVo
 	 */
 	public static IPAddressVo getIPAddress(String strAddress) {
