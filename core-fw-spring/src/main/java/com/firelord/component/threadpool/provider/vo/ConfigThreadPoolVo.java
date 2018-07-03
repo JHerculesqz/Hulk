@@ -7,7 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-@ConfigurationProperties(prefix = "msCommon.threadpool")
+//@ConfigurationProperties(prefix = "msCommon.threadpool")
 @Component
 @ToString
 public class ConfigThreadPoolVo {

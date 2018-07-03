@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
-@ConfigurationProperties(prefix = "msCommon.log")
+//@ConfigurationProperties(prefix = "msCommon.log")
 @EnableAutoConfiguration
 @Component
 @ToString

@@ -7,7 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-@ConfigurationProperties(prefix = "msCommon.sendMsg")
+//@ConfigurationProperties(prefix = "msCommon.sendMsg")
 @Component
 @ToString
 public class ConfigRestTemplateVo {
