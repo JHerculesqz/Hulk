@@ -11,6 +11,4 @@
         <module>core-fw</module>
         <module>core-fw-spring</module>
     </modules>
-
-
 </project>
