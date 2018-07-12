@@ -88,6 +88,22 @@ public class DirUtilsEx {
 		return lstRes;
 	}
 
+	public static List<File> getFileLstInDirEx2(String strDirPath) {
+		List<File> lstRes = new ArrayList<>();
+
+		FindFile oFindFile = new FindFile().searchPath(strDirPath).setRecursive(true).setIncludeDirs(true);
+
+		Iterator<File> oIter = oFindFile.iterator();
+		while (oIter.hasNext()) {
+			File oFile = oIter.next();
+			if (oFile.isFile()) {
+				lstRes.add(oFile);
+			}
+		}
+
+		return lstRes;
+	}
+
 	// #endregion
 
 	// #region getParentDirPath

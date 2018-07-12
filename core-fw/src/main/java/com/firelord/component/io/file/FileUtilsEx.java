@@ -1,7 +1,9 @@
 package com.firelord.component.io.file;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.util.ArrayList;
@@ -12,6 +14,7 @@ import org.apache.commons.io.FileUtils;
 
 import com.firelord.component.io.file.vo.FilePathVo;
 import com.firelord.component.process.ProcessUtilsEx;
+import org.apache.commons.io.IOUtils;
 
 public class FileUtilsEx {
 	// #region Const
@@ -236,5 +239,22 @@ public class FileUtilsEx {
 		FileUtils.copyFile(oFileSrc, oFileDst);
 	}
 
+	public static void writeFileAppendByInputStream(String strFilePath,
+													InputStream oInputStream,
+													boolean bAppend) throws IOException {
+		File oFileDestination = new File(strFilePath);
+		try {
+			FileOutputStream oFileOutputStream = FileUtils.openOutputStream(oFileDestination,
+					bAppend);
+			try {
+				IOUtils.copy(oInputStream, oFileOutputStream);
+				oFileOutputStream.close();
+			} finally {
+				IOUtils.closeQuietly(oInputStream);
+			}
+		} finally {
+			IOUtils.closeQuietly(oInputStream);
+		}
+	}
 	// #endregion
 }
