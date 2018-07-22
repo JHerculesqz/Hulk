@@ -17,14 +17,14 @@ import com.firelord.component.process.ProcessUtilsEx;
 import org.apache.commons.io.IOUtils;
 
 public class FileUtilsEx {
-	// #region Const
+	//#region Const
 
 	@SuppressWarnings("unused")
 	private static final boolean IS_DEBUG = true;
 
-	// #endregion
+	//#endregion
 
-	// #region isExists
+	//#region isExists
 
 	public static boolean isExists(String strFilePath) {
 		File oFile = new File(strFilePath);
@@ -32,9 +32,9 @@ public class FileUtilsEx {
 		return bRes;
 	}
 
-	// #endregion
+	//#endregion
 
-	// #region delFile
+	//#region delFile
 
 	public static boolean delFile(String strFilePath) {
 		if (isExists(strFilePath)) {
@@ -45,9 +45,9 @@ public class FileUtilsEx {
 		}
 	}
 
-	// #endregion
+	//#endregion
 
-	// #region getFileLst
+	//#region getFileLst
 
 	public static Collection<File> getFileLst(String strDirPath) {
 		File oDir = new File(strDirPath);
@@ -55,9 +55,9 @@ public class FileUtilsEx {
 		return lstFile;
 	}
 
-	// #endregion
+	//#endregion
 
-	// #region writeAllText
+	//#region writeAllText
 
 	public static void writeAllText(String strContent, String strFilePath) {
 		// 1.delFile
@@ -72,9 +72,9 @@ public class FileUtilsEx {
 		}
 	}
 
-	// #endregion
+	//#endregion
 
-	// #region appendAllText
+	//#region appendAllText
 
 	public static void appendAllText(String strContent, String strFilePath) {
 		File oFile = new File(strFilePath);
@@ -85,9 +85,9 @@ public class FileUtilsEx {
 		}
 	}
 
-	// #endregion
+	//#endregion
 
-	// #region readAllText
+	//#region readAllText
 
 	public static String readAllText(String strFilePath) {
 		String strRes = "";
@@ -102,9 +102,9 @@ public class FileUtilsEx {
 		return strRes;
 	}
 
-	// #endregion
+	//#endregion
 
-	// #region parseFilePath
+	//#region parseFilePath
 
 	public static FilePathVo parseFilePath(String strFilePath) {
 		FilePathVo oFilePathVo = new FilePathVo();
@@ -122,9 +122,9 @@ public class FileUtilsEx {
 		return oFilePathVo;
 	}
 
-	// #endregion
+	//#endregion
 
-	// #region getBytes
+	//#region getBytes
 
 	public static byte[] getBytes(String strFilePath) {
 		byte[] arrRes = null;
@@ -136,9 +136,9 @@ public class FileUtilsEx {
 		return arrRes;
 	}
 
-	// #endregion
+	//#endregion
 
-	// #region xcopy
+	//#region xcopy
 
 	public static void xcopyDir(String strDirPathSrc, String strDirPathDst) {
 		// 1.generate strDirPathSrc
@@ -161,9 +161,9 @@ public class FileUtilsEx {
 		ProcessUtilsEx.runByShellSyn(strCmd, strCmdArgs);
 	}
 
-	// #endregion
+	//#endregion
 
-	// #region writeAllByte
+	//#region writeAllByte
 
 	public static void writeAllByte(byte[] arrBytes, String strFilePath) {
 		try {
@@ -173,9 +173,9 @@ public class FileUtilsEx {
 		}
 	}
 
-	// #endregion
+	//#endregion
 
-	// #region readAllByte
+	//#region readAllByte
 
 	public static byte[] readAllByte(String strFilePath) {
 		byte[] arrBytes = null;
@@ -187,9 +187,9 @@ public class FileUtilsEx {
 		return arrBytes;
 	}
 
-	// #endregion
+	//#endregion
 
-	// #region exclude
+	//#region exclude
 
 	public static List<File> exclude(List<File> lstFiles, List<String> lstExcludeKeyInFileName) {
 		List<File> lstRes = new ArrayList<>();
@@ -211,9 +211,9 @@ public class FileUtilsEx {
 		return lstRes;
 	}
 
-	// #endregion
+	//#endregion
 
-	// #region xcopyFiles
+	//#region xcopyFiles
 
 	public static void xcopyFile(String strFilePath, String strDirPathDst) {
 		// 1.generate strDirPathDst
@@ -229,9 +229,9 @@ public class FileUtilsEx {
 		ProcessUtilsEx.runByShellSyn(strCmd, strCmdArgs);
 	}
 
-	// #endregion
+	//#endregion
 
-	// #region copy
+	//#region copy
 
 	public static void copy(String strFilePathSrc, String strFilePathDst) throws IOException {
 		File oFileSrc = new File(strFilePathSrc);
@@ -256,5 +256,5 @@ public class FileUtilsEx {
 			IOUtils.closeQuietly(oInputStream);
 		}
 	}
-	// #endregion
+	//#endregion
 }

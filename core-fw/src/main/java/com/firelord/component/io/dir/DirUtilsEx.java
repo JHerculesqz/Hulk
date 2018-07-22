@@ -11,7 +11,7 @@ import org.apache.commons.io.FileUtils;
 import jodd.io.findfile.FindFile;
 
 public class DirUtilsEx {
-	// #region isExists
+	//#region isExists
 
 	public static boolean isExists(String strDirPath) {
 		File oDir = new File(strDirPath);
@@ -19,9 +19,9 @@ public class DirUtilsEx {
 		return bRes;
 	}
 
-	// #endregion
+	//#endregion
 
-	// #region mkdir
+	//#region mkdir
 
 	public static void mkDir(String strDirPath) {
 		try {
@@ -31,9 +31,9 @@ public class DirUtilsEx {
 		}
 	}
 
-	// #endregion
+	//#endregion
 
-	// #region delDir
+	//#region delDir
 
 	public static boolean delDir(String strDirPath) {
 		if (isExists(strDirPath)) {
@@ -44,9 +44,9 @@ public class DirUtilsEx {
 		}
 	}
 
-	// #endregion
+	//#endregion
 
-	// #region getFileLstInDir
+	//#region getFileLstInDir
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static List<File> getFileLstInDir(String strDirPath, String strRegex) {
@@ -104,9 +104,9 @@ public class DirUtilsEx {
 		return lstRes;
 	}
 
-	// #endregion
+	//#endregion
 
-	// #region getParentDirPath
+	//#region getParentDirPath
 
 	public static String getParentDirPath(String strDirPath) {
 		File oDir = new File(strDirPath);
@@ -114,5 +114,5 @@ public class DirUtilsEx {
 		return strDirPathParent;
 	}
 
-	// #endregion
+	//#endregion
 }
