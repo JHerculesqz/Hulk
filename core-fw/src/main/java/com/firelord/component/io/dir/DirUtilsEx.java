@@ -11,6 +11,13 @@ import org.apache.commons.io.FileUtils;
 import jodd.io.findfile.FindFile;
 
 public class DirUtilsEx {
+	//#region Const
+
+	public static final String TYPE_FOLDER_ROOT = "root";
+	public static final String TYPE_FOLDER = "folder";
+
+	//#endregion
+
 	//#region isExists
 
 	public static boolean isExists(String strDirPath) {
@@ -112,6 +119,50 @@ public class DirUtilsEx {
 		File oDir = new File(strDirPath);
 		String strDirPathParent = oDir.getParent();
 		return strDirPathParent;
+	}
+
+	//#endregion
+
+	//#region visitDirTree
+
+	public static void visitDirTree(String strDirPath, DirTreeMO oDirTreeMO){
+		File oRoot = new File(strDirPath);
+		File[] arrFiles = oRoot.listFiles();
+		for(File oFile : arrFiles){
+			if (oFile.isDirectory()){
+				DirTreeMO oSubDirTreeMo = new DirTreeMO();
+				oSubDirTreeMo.setName(oFile.getName());
+				oSubDirTreeMo.setType(TYPE_FOLDER);
+				oSubDirTreeMo.setPath(oFile.getPath());
+				oDirTreeMO.getChildren().add(oSubDirTreeMo);
+				visitDirTree(oFile.getAbsolutePath(), oSubDirTreeMo);
+			}
+			else{
+				DirTreeMO oSubDirTreeMO = new DirTreeMO();
+				oSubDirTreeMO.setName(oFile.getName());
+				String strFileName = oFile.getName();
+				String strFileType = strFileName
+						.substring(strFileName.lastIndexOf(".") + 1)
+						.toLowerCase();
+				oSubDirTreeMO.setType(strFileType);
+				oSubDirTreeMO.setPath(oFile.getPath());
+				oDirTreeMO.getChildren().add(oSubDirTreeMO);
+			}
+		}
+	}
+
+	public static void visitDirTreeEx(String strDirPath, IVisitCallback oIVisitCallback){
+		File oRoot = new File(strDirPath);
+		File[] arrFiles = oRoot.listFiles();
+		for(File oFile : arrFiles){
+			if(oFile.isDirectory()){
+				oIVisitCallback.dealWithFolder(oFile);
+				visitDirTreeEx(oFile.getAbsolutePath(), oIVisitCallback);
+			}
+			else{
+				oIVisitCallback.dealWithFile(oFile);
+			}
+		}
 	}
 
 	//#endregion

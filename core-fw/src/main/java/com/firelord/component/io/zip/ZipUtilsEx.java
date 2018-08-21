@@ -15,24 +15,24 @@ import com.firelord.component.io.file.FileUtilsEx;
 import com.firelord.component.io.zip.vo.ZipValidatorVo;
 
 public class ZipUtilsEx {
-	// #region unpack
+	//#region unpack
 
 	public static void unpack(String strFilePath4Zip, String strDirPath4unZip) {
 		ZipUtil.unpack(new File(strFilePath4Zip), new File(strDirPath4unZip), Charset.forName("utf-8"));
 	}
 
-	// #endregion
+	//#endregion
 
-	// #region unpackEntry
+	//#region unpackEntry
 
 	public static void unpackEntry(String strFilePath4Zip, String strFilePathRelative, String strFilePath4unZip) {
 		DirUtilsEx.mkDir(new File(strFilePath4unZip).getParent());
 		ZipUtil.unpackEntry(new File(strFilePath4Zip), strFilePathRelative, new File(strFilePath4unZip));
 	}
 
-	// #endregion
+	//#endregion
 
-	// #region replaceEntry
+	//#region replaceEntry
 
 	public static boolean replaceEntry(String strFilePath4Zip, String strFilePathRelative4Unpack,
 			IZipUtilsExCallback oICallback) {
@@ -68,9 +68,9 @@ public class ZipUtilsEx {
 		ZipUtil.replaceEntry(new File(strFilePath4Zip), strFilePathRelative4Unpack, arrBytes, Deflater.NO_COMPRESSION);
 	}
 
-	// #endregion
+	//#endregion
 
-	// #region validate
+	//#region validate
 
 	public static ZipValidatorVo validate(String strFilePathZip) {
 		final ZipValidatorVo oZipValidatorVo = new ZipValidatorVo();
@@ -89,6 +89,15 @@ public class ZipUtilsEx {
 		return oZipValidatorVo;
 	}
 
-	// #endregion
+	//#endregion
 
+	//#region pack
+
+	public static void pack(String strDirPathSrc, String strDirPathDst){
+		File oDirPathSrc = new File(strDirPathSrc);
+		File oDirPathDst = new File(strDirPathDst);
+		ZipUtil.pack(oDirPathSrc, oDirPathDst, true);
+	}
+
+	//#endregion
 }
