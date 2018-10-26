@@ -10,5 +10,6 @@
     <modules>
         <module>core-fw</module>
         <module>core-fw-spring</module>
+        <module>core-fw-spring-test-db-mybatis</module>
     </modules>
 </project>

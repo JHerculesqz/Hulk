@@ -1,3 +1,4 @@
 .idea/
 core-fw-spring/target/
 core-fw/target/
+core-fw-spring-test-db-mybatis/target/
