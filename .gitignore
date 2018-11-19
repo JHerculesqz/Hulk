@@ -4,3 +4,7 @@ core-fw/target/
 core-fw-spring-test-db-mybatis/target/
 core-fw-spring-test-db-es/target/
 core-fw-spring-test-db-mongo/target/
+core-fw-spring-test-security/target/
+*.jar
+z-devops/result/
+core-fw-spring-security/target/

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="JaCoCo" default="run" xmlns:jacoco="antlib:org.jacoco.ant">
+    <property name="jacocoAntPath" value="/opt/jacoco/lib/jacocoant.jar"/>
+    <property name="jacocoExecPath" value="/data/jacocoExec"/>
+    <property name="jacocoReportPath" value="/data/jacocoReport"/>
+    <property name="server_ip_test163" value="172.16.1.31"/>
+    <property name="server_port_cybs" value="8456"/>
+    <property name="server_port_gateway" value="8457"/>
+
+    <property name="gatewaySrcPath" value="/data/jacocoSrc/Gateway/GATEWAY/fi-website/src/main/java"/>
+    <property name="cybsSrcPath" value="/data/jacocoSrc/cybs/src/main/java"/>    
+
+        <!--.class文件路径-->
+    <property name="gatewayClassesPath" value="/data/jacocoClasses/gateway/WEB-INF/classes"/>
+
+    <property name="cybsClassesPath" value="/data/jacocoClasses/cybs/WEB-INF/classes"/>
+
+        <!--让ant知道去哪儿找Jacoco-->
+      <taskdef uri="antlib:org.jacoco.ant" resource="org/jacoco/ant/antlib.xml">
+            <classpath path="${jacocoAntPath}"/>
+      </taskdef>
+
+           <target name="run">
+            <echo message="start..."/>
+            <echo message="dump..."/>
+                <antcall target="dump"/>
+            <echo message="merge..."/>
+                <antcall target="merge"/>
+            <echo message="report..."/>
+                <antcall target="report"/>
+            <echo message="end..."/>
+           </target>
+
+      <!--dump任务：
+                        根据前面配置的ip地址，和端口号，访问目标tomcat服务，并生成.exec文件。-->
+      <target name="dump">
+        <jacoco:dump address="${server_ip_test163}" reset="true" destfile="${jacocoExecPath}/jacoco_gateway.exec" port="${server_port_gateway}" append="false"/>
+        <jacoco:dump address="${server_ip_test163}" reset="true" destfile="${jacocoExecPath}/jacoco_cybs.exec" port="${server_port_cybs}" append="false"/>
+      </target>
+
+    <target name="merge">
+        <jacoco:merge destfile="${jacocoExecPath}/merged.exec">
+            <fileset dir="${jacocoExecPath}" includes="*.exec"/>
+        </jacoco:merge>
+    </target>
+
+       <!--jacoco任务：
+                        根据前面配置的源代码路径和.class文件路径，
+                        根据dump后，生成的.exec文件，生成最终的html覆盖率报告。-->
+       <target name="report">
+        <jacoco:report>
+               <executiondata>
+                <file file="${jacocoExecPath}/merged.exec"/>
+            </executiondata>
+
+            <structure name="JaCoCo Report">
+                <group name="gateway coverage">
+                    <sourcefiles encoding="UTF-8">
+                            <fileset dir="${gatewaySrcPath}"/>
+                    </sourcefiles>
+                    <classfiles>
+                            <fileset dir="${gatewayClassesPath}"/>
+                    </classfiles>
+                </group>
+                
+                <group name="cybs coverage">
+                    <sourcefiles encoding="UTF-8">
+                        <fileset dir="${cybsSrcPath}"/>
+                    </sourcefiles>
+                    <classfiles>
+                        <fileset dir="${cybsClassesPath}"/>
+                    </classfiles>
+                </group>
+                
+            </structure>
+
+            <html destdir="${jacocoReportPath}" encoding="utf-8"/>
+        <csv destfile="${jacocoReportPath}/report.csv"/>
+        <xml destfile="${jacocoReportPath}/report.xml"/>
+        </jacoco:report>
+      </target>
+</project>

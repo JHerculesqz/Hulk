@@ -10,8 +10,11 @@
     <modules>
         <module>core-fw</module>
         <module>core-fw-spring</module>
+        <module>core-fw-spring-test</module>
         <module>core-fw-spring-test-db-mybatis</module>
         <module>core-fw-spring-test-db-es</module>
         <module>core-fw-spring-test-db-mongo</module>
+        <module>core-fw-spring-test-security</module>
+        <module>core-fw-spring-security</module>
     </modules>
 </project>

@@ -71,10 +71,10 @@ public class MongoController {
         List<TBLBook> lstTBLBook3 = this.tblBookRepository.findByName("SaveAll1",
                 10, 0);
 
-        //findOneEx2
+        //findByNameEx
         DBObject oTBLBook3 = this.tblBookRepository.findByNameEx("SaveAll1");
 
-        //
+        //findByNameEx2
         DBCursor oDBCursor = this.tblBookRepository.findByNameEx2("SaveAll1");
         List<DBObject> lstTBLBook4 = oDBCursor.toArray();
     }
