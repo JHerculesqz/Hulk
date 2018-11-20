@@ -14,7 +14,7 @@ import java.util.Set;
 /**
  * TBLUser
  */
-@Document(collection = "user")
+@Document(collection = "tblUser")
 public class TBLUser {
     //#region Fields
 

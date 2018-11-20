@@ -10,7 +10,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 /**
  * TBLRole
  */
-@Document(collection = "role")
+@Document(collection = "tblRole")
 public class TBLRole {
     //#region Fields
 
