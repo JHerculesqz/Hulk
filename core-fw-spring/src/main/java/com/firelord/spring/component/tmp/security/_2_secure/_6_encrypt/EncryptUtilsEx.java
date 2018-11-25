@@ -26,11 +26,11 @@ import java.security.spec.InvalidKeySpecException;
  * // 1.2.getProvider4Crypto<br>
  * System.out.println(EncryptUtilsEx.getProvider4Crypto().hash("123", "111"));
  * <br>
- * // 1.3.getHashPassword&getSalt<br>
+ * 1.3.getHashPassword and getSalt<br>
  * byte[] arrSalt = EncryptUtilsEx.getSalt();<br>
  * String strRes4getHashPassword = EncryptUtilsEx.getHashPassword("xxxx",
  * arrSalt);<br>
- * // 1.4.encrypt&decrypt<br>
+ * // 1.4.encrypt and decrypt<br>
  * String strRes4encrypt = EncryptUtilsEx.encrypt("xxxx");<br>
  * PlainText oRes4encrypt = EncryptUtilsEx.decrypt(strRes4encrypt);<br>
  * // 2.getProvider4Randomizer<br>

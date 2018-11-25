@@ -7,7 +7,7 @@
     <description>It is a Java tool class library, pure Java, independent of heavy frameworks like Spring, easy to use
         for lightweight projects and improve development efficiency
     </description>
-    <url>https://github.com/JHerculesqz/core-fw-java/core-fw</url>
+    <url>https://github.com/JHerculesqz/Hulk/core-fw</url>
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
@@ -21,9 +21,9 @@
         </developer>
     </developers>
     <scm>
-        <connection>scm:git:git@github.com:JHerculesqz/core-fw-java.git</connection>
-        <developerConnection>scm:git:git@github.com:JHerculesqz/core-fw-java.git</developerConnection>
-        <url>git@github.com:JHerculesqz/core-fw-java.git</url>
+        <connection>scm:git:git@github.com:JHerculesqz/Hulk.git</connection>
+        <developerConnection>scm:git:git@github.com:JHerculesqz/Hulk.git</developerConnection>
+        <url>git@github.com:JHerculesqz/Hulk.git</url>
     </scm>
     <profiles>
         <profile>
@@ -95,6 +95,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>core-fw</artifactId>
+    <version>1.0.2</version>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>

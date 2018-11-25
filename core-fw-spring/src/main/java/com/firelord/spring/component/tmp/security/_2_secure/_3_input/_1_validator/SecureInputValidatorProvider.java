@@ -13,29 +13,31 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 
 /**
- * SecureInputValidatorProvider oSecureInputValidatorProvider = new
- * SecureInputValidatorProvider();<br>
- * boolean bRes = oSecureInputValidatorProvider.isValidDate("2014-06-18",
- * "YYYY-MM-dd");<br>
- * bRes = oSecureInputValidatorProvider.isValidDouble("3.45", 0.01, 2.0);<br>
- * bRes = oSecureInputValidatorProvider.isValidNumber("3.45", 0, 4);<br>
- * bRes = oSecureInputValidatorProvider.isValidInteger("3.45", 0, 4);<br>
- * bRes = oSecureInputValidatorProvider .isValidFileContent(
- * "C:\\1.Monkey\\1.Research\\4.SCMGit\\demo-java-ms\\README.md", 1000000000);
- * <br>
- * bRes = oSecureInputValidatorProvider.isValidFileName("ss.zip");<br>
- * bRes = oSecureInputValidatorProvider.isValidInput("xxx@huawei.com",
- * EnumInputValidator.Email, 100);<br>
- * bRes = oSecureInputValidatorProvider.isValidListItem("si",
- * Arrays.asList("ss", "dd"));<br>
- * bRes = oSecureInputValidatorProvider.isValidPrintable("ffdsfsrgfs", 4);<br>
- * bRes = oSecureInputValidatorProvider.isValidSafeHTML(
- * "<script>alert('1')</script>", 100);<br>
- * <p>
- * TODO:need wrap this api<br>
- * ESAPI.validator().isValidRedirectLocation(context, input, allowNull);<br>
+ * SecureInputValidatorProvider
  */
 public class SecureInputValidatorProvider {
+//     * SecureInputValidatorProvider oSecureInputValidatorProvider = new
+//            * SecureInputValidatorProvider();<br>
+// * boolean bRes = oSecureInputValidatorProvider.isValidDate("2014-06-18",
+//            * "YYYY-MM-dd");<br>
+// * bRes = oSecureInputValidatorProvider.isValidDouble("3.45", 0.01, 2.0);<br>
+// * bRes = oSecureInputValidatorProvider.isValidNumber("3.45", 0, 4);<br>
+// * bRes = oSecureInputValidatorProvider.isValidInteger("3.45", 0, 4);<br>
+// * bRes = oSecureInputValidatorProvider .isValidFileContent(
+//            * "C:\\1.Monkey\\1.Research\\4.SCMGit\\demo-java-ms\\README.md", 1000000000);
+// * <br>
+// * bRes = oSecureInputValidatorProvider.isValidFileName("ss.zip");<br>
+// * bRes = oSecureInputValidatorProvider.isValidInput("xxx@huawei.com",
+//            * EnumInputValidator.Email, 100);<br>
+// * bRes = oSecureInputValidatorProvider.isValidListItem("si",
+//            * Arrays.asList("ss", "dd"));<br>
+// * bRes = oSecureInputValidatorProvider.isValidPrintable("ffdsfsrgfs", 4);<br>
+// * bRes = oSecureInputValidatorProvider.isValidSafeHTML(
+//            * "<script>alert('1')</script>", 100);<br>
+// * <p>
+// * TODO:need wrap this api<br>
+// * ESAPI.validator().isValidRedirectLocation(context, input, allowNull);<br>
+
     // #region Const
 
     private static final boolean IS_DEBUG = true;

@@ -42,9 +42,9 @@ public class IOCUtilsEx {
      * [important]java bean config class sample:
      *
      * @param oAppConfigClazz java bean config class
-     * @Configuration </>
+     * [Annotation]Configuration
      * public class AppConfig {
-     * @Bean </>
+     * [Annotation]Bean
      * public JavaBean1 javaBean1() {
      * return new JavaBean1();
      * }
