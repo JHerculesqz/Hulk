@@ -6,7 +6,7 @@ Hulk can improve the efficiency of application software development and is widel
 We will continue to update, thank you for your attention and use
 
 # Quick Start
-```
+```xml
 <dependency>
   <groupId>com.github.jherculesqz</groupId>
   <artifactId>core-fw-spring-security</artifactId>
