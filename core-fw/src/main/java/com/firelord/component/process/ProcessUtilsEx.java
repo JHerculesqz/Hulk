@@ -1,9 +1,9 @@
 package com.firelord.component.process;
 
+import com.firelord.component.log.LogUtilsEx;
+
 import java.io.IOException;
 import java.io.InputStream;
-
-import com.firelord.component.log.LogUtilsEx;
 
 public class ProcessUtilsEx {
 	// #region Const

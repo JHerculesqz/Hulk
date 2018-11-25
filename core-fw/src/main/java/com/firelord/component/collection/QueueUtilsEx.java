@@ -7,50 +7,49 @@ import java.util.List;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
-
 public class QueueUtilsEx {
-	// #region Const
+    // #region Const
 
-	private static final boolean IS_DEBUG = false;
+    private static final boolean IS_DEBUG = false;
 
-	// #endregion
+    // #endregion
 
-	// #region Fielcs
+    // #region Fielcs
 
-	private BlockingQueue<Object> cache = new LinkedBlockingQueue<Object>();
+    private BlockingQueue<Object> cache = new LinkedBlockingQueue<Object>();
 
-	// #endregion
+    // #endregion
 
-	// #region set
+    // #region set
 
-	public void set(Object oPOJO) {
-		try {
-			cache.put(oPOJO);
-		} catch (InterruptedException e) {
-			LogUtilsEx.log(e.getMessage(), IS_DEBUG);
-		}
-	}
+    public void set(Object oPOJO) {
+        try {
+            cache.put(oPOJO);
+        } catch (InterruptedException e) {
+            LogUtilsEx.log(e.getMessage(), IS_DEBUG);
+        }
+    }
 
-	// #endregion
+    // #endregion
 
-	// #region get
+    // #region get
 
-	public List<Object> get() {
-		List<Object> lstRes = new ArrayList<Object>();
+    public List<Object> get() {
+        List<Object> lstRes = new ArrayList<Object>();
 
-		while (true) {
-			Object oItemInQueue = cache.poll();
-			if (null != oItemInQueue) {
-				lstRes.add(oItemInQueue);
-			}
+        while (true) {
+            Object oItemInQueue = cache.poll();
+            if (null != oItemInQueue) {
+                lstRes.add(oItemInQueue);
+            }
 
-			if (cache.isEmpty()) {
-				break;
-			}
-		}
+            if (cache.isEmpty()) {
+                break;
+            }
+        }
 
-		return lstRes;
-	}
+        return lstRes;
+    }
 
-	// #endregion
+    // #endregion
 }

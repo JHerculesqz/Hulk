@@ -4,7 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <!--OSS-->
     <name>core-fw</name>
-    <description>It is a Java tool class library, pure Java, independent of heavy frameworks like Spring, easy to use for lightweight projects and improve development efficiency</description>
+    <description>It is a Java tool class library, pure Java, independent of heavy frameworks like Spring, easy to use
+        for lightweight projects and improve development efficiency
+    </description>
     <url>https://github.com/JHerculesqz/core-fw-java/core-fw</url>
     <licenses>
         <license>

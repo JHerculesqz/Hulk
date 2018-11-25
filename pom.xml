@@ -16,5 +16,6 @@
         <module>core-fw-spring-test-db-mongo</module>
         <module>core-fw-spring-test-security</module>
         <module>core-fw-spring-security</module>
+        <module>core-fw-opencv</module>
     </modules>
 </project>

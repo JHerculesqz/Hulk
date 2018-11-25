@@ -9,3 +9,4 @@ core-fw-spring-test-security/target/
 z-devops/result/
 core-fw-spring-security/target/
 *.iml
+core-fw-opencv/target/
