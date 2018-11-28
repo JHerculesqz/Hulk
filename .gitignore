@@ -10,3 +10,5 @@ z-devops/result/
 core-fw-spring-security/target/
 *.iml
 core-fw-opencv/target/
+core-fw-opencv-test/target/
+core-fw-javafx/target/

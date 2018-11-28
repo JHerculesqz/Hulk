@@ -4,7 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <!--OSS-->
     <name>core-fw-opencv</name>
-    <description>It is a Java tool class library, pure Java, independent of heavy frameworks like Spring, easy to use for lightweight projects and improve development efficiency</description>
+    <description>It is a Java tool class library, pure Java, independent of heavy frameworks like Spring, easy to use
+        for lightweight projects and improve development efficiency
+    </description>
     <url>https://github.com/JHerculesqz/core-fw-java/core-fw</url>
     <licenses>
         <license>
@@ -93,9 +95,11 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>core-fw-opencv</artifactId>
+    <version>1.0.2</version>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
     </properties>
     <build>
         <plugins>
@@ -103,8 +107,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>7</source>
-                    <target>7</target>
+                    <source>8</source>
+                    <target>8</target>
                 </configuration>
             </plugin>
         </plugins>
@@ -113,7 +117,15 @@
         <dependency>
             <groupId>com.github.jherculesqz</groupId>
             <artifactId>core-fw</artifactId>
-            <version>1.0</version>
+            <version>1.0.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.opencv</groupId>
+            <artifactId>opencv</artifactId>
+            <version>3.4.4</version>
+            <systemPath>C:/1.Monkey/1.Research/1.Tools/opencv3.4.4/build/java/opencv-344.jar</systemPath>
+            <scope>system</scope>
         </dependency>
     </dependencies>
 </project>

@@ -3,11 +3,11 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <!--OSS-->
-    <name>core-fw-spring-security</name>
+    <name>core-fw-javafx</name>
     <description>It is a Java tool class library, pure Java, independent of heavy frameworks like Spring, easy to use
         for lightweight projects and improve development efficiency
     </description>
-    <url>https://github.com/JHerculesqz/Hulk/core-fw-spring</url>
+    <url>https://github.com/JHerculesqz/core-fw-java/core-fw</url>
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
@@ -21,9 +21,9 @@
         </developer>
     </developers>
     <scm>
-        <connection>scm:git:git@github.com:JHerculesqz/Hulk.git</connection>
-        <developerConnection>scm:git:git@github.com:JHerculesqz/Hulk.git</developerConnection>
-        <url>git@github.com:JHerculesqz/Hulk.git</url>
+        <connection>scm:git:git@github.com:JHerculesqz/core-fw-java.git</connection>
+        <developerConnection>scm:git:git@github.com:JHerculesqz/core-fw-java.git</developerConnection>
+        <url>git@github.com:JHerculesqz/core-fw-java.git</url>
     </scm>
     <profiles>
         <profile>
@@ -89,14 +89,12 @@
 
     <!--CODE-->
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.0.3.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <artifactId>core-fw-java</artifactId>
+        <groupId>com.github.jherculesqz</groupId>
+        <version>1.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.github.jherculesqz</groupId>
-    <artifactId>core-fw-spring-security</artifactId>
+    <artifactId>core-fw-javafx</artifactId>
     <version>1.0.2</version>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -108,31 +106,18 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
             </plugin>
         </plugins>
     </build>
     <dependencies>
         <dependency>
             <groupId>com.github.jherculesqz</groupId>
-            <artifactId>core-fw-spring</artifactId>
+            <artifactId>core-fw</artifactId>
             <version>1.0.2</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-mongodb</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>nz.net.ultraq.thymeleaf</groupId>
-            <artifactId>thymeleaf-layout-dialect</artifactId>
         </dependency>
     </dependencies>
 </project>
