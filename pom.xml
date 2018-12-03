@@ -19,5 +19,6 @@
         <module>core-fw-opencv</module>
         <module>core-fw-opencv-test</module>
         <module>core-fw-javafx</module>
+        <module>core-fw-opencv-test2</module>
     </modules>
 </project>

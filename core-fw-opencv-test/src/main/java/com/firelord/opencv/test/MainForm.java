@@ -18,6 +18,9 @@ public class MainForm {
     @FXML
     private ImageView imageView;
 
+    @FXML
+    private ImageView imageViewHistogram;
+
     //#endregion
 
     //#region inner
@@ -34,7 +37,29 @@ public class MainForm {
             @Override
             public void whenGrabImgFrame() {
                 VisionMatrix oSrc = VisionTools.video4PC.grabImgFrame();
+                //#region contourseCalc
                 VisionMatrix oDst = VisionTools.imgBasicFeature.contoursCalc(oSrc);
+                //#endregion
+                //#region histogram
+//                VisionMatrix oDst = new VisionMatrix(oSrc, VisionMatrixInit.COPY);
+//                VisionMatrix oDst1 = VisionTools.imgBasicFeature.histogramDisplay(oSrc);
+//                JavaFXUtils.imageView.updateImageView(oDst1.toBufferImg(), imageViewHistogram);
+//                VisionMatrix oDst2 = VisionTools.imgBasicFeature.histogramEqualize(oSrc);
+//                JavaFXUtils.imageView.updateImageView(oDst2.toBufferImg(), imageViewHistogram);
+//                double[] arrDistance = VisionTools.imgBasicFeature.histogramCompare(oSrc);
+//                for (int i = 0; i < arrDistance.length; i++) {
+//                    System.out.println("[distanceType]" + i + ",[distance]" + arrDistance[i]);
+//                }
+//                VisionMatrix oTemp3 = new VisionMatrix("C:/test/circle.bmp");
+//                VisionMatrix oDst3 = VisionTools.imgBasicFeature.histogramBackProject(oSrc, oTemp3);
+//                JavaFXUtils.imageView.updateImageView(oDst3.toBufferImg(), imageViewHistogram);
+
+                //#endregion
+                //#region templateQuery
+//                VisionMatrix oTemp = new VisionMatrix("C:/test/circle.bmp");
+//                VisionMatrix oDst = VisionTools.imgBasicFeature.templateQuery(oTemp, oSrc,
+//                        5);
+                //#endregion
                 JavaFXUtils.imageView.updateImageView(oDst.toBufferImg(), imageView);
             }
 

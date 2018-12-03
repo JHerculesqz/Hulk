@@ -5,13 +5,18 @@ import lombok.Setter;
 import lombok.ToString;
 import org.opencv.core.Mat;
 import org.opencv.imgcodecs.Imgcodecs;
-import org.opencv.imgproc.Imgproc;
 
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferByte;
 
 @ToString
 public class VisionMatrix {
+    //#region Const
+
+    public static final String INIT_EYE = "INIT_EYE";
+
+    //#endregion
+
     //#region Fields
 
     @Setter
@@ -26,8 +31,16 @@ public class VisionMatrix {
         this.mat = new Mat();
     }
 
-    public VisionMatrix(VisionMatrix oSrc) {
-        this.mat = Mat.eye(oSrc.getMat().size(), oSrc.getMat().type());
+    public VisionMatrix(VisionMatrix oSrc, VisionMatrixInit enumVisionMatrixInit) {
+        //VisionMatrixInit.EYE
+        if (enumVisionMatrixInit.equals(VisionMatrixInit.EYE)) {
+            this.mat = Mat.eye(oSrc.getMat().size(), oSrc.getMat().type());
+        }
+        //VisionMatrixInit.COPY
+        else if (enumVisionMatrixInit.equals(VisionMatrixInit.COPY)) {
+            this.mat = new Mat();
+            oSrc.getMat().copyTo(this.mat);
+        }
     }
 
     public VisionMatrix(String strFilePath) {
@@ -48,17 +61,6 @@ public class VisionMatrix {
 
     public void destroy() {
         this.mat.release();
-    }
-
-    //#endregion
-
-    //#region threshold
-
-    public void threshold(VisionMatrix oGray, VisionMatrix oBinary) {
-        Imgproc.cvtColor(this.getMat(), oGray.getMat(), Imgproc.COLOR_BGR2GRAY);
-        Imgproc.threshold(oGray.getMat(), oBinary.getMat(),
-                0, 255,
-                Imgproc.THRESH_BINARY_INV | Imgproc.THRESH_OTSU);
     }
 
     //#endregion

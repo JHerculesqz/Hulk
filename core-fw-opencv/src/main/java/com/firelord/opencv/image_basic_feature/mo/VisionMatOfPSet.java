@@ -1,12 +1,9 @@
 package com.firelord.opencv.image_basic_feature.mo;
 
-import com.firelord.opencv.matrix.VisionMatrix;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import org.opencv.core.MatOfPoint;
-import org.opencv.core.Point;
-import org.opencv.imgproc.Imgproc;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,16 +20,12 @@ public class VisionMatOfPSet {
 
     //#region Construction
 
-    public VisionMatOfPSet(VisionMatrix oBinary) {
-        VisionMatrix oHierarchy = new VisionMatrix();
-        List<MatOfPoint> lstMatOfPoint = new ArrayList<>();
-        Imgproc.findContours(oBinary.getMat(), lstMatOfPoint, oHierarchy.getMat(),
-                Imgproc.RETR_EXTERNAL, Imgproc.CHAIN_APPROX_SIMPLE, new Point(0, 0));
+    public VisionMatOfPSet(List<MatOfPoint> lstMatOfPoint) {
         for (MatOfPoint oMatOfPoint : lstMatOfPoint) {
             VisionMatOfP oVisionMatOfP = VisionMatOfP.builder()
                     .matOfPoint(oMatOfPoint)
                     .build();
-            this.visionMatOfPList.add(oVisionMatOfP);
+            this.getVisionMatOfPList().add(oVisionMatOfP);
         }
     }
 
