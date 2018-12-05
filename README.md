@@ -6,4 +6,4 @@ Hulk can improve the efficiency of application software development and is widel
 We will continue to update, thank you for your attention and use
 
 # Document
-[](https://jherculesqz.github.io/Hulk/)
+[Docuemnt Site](https://jherculesqz.github.io/Hulk/)
