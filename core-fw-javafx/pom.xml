@@ -91,11 +91,11 @@
     <parent>
         <artifactId>core-fw-java</artifactId>
         <groupId>com.github.jherculesqz</groupId>
-        <version>1.0</version>
+        <version>1.0.0-a1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>core-fw-javafx</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.0-a1</version>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -117,7 +117,7 @@
         <dependency>
             <groupId>com.github.jherculesqz</groupId>
             <artifactId>core-fw</artifactId>
-            <version>1.0.2</version>
+            <version>1.0.0-a1</version>
         </dependency>
     </dependencies>
 </project>

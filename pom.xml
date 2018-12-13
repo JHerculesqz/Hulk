@@ -6,7 +6,7 @@
     <groupId>com.github.jherculesqz</groupId>
     <artifactId>core-fw-java</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.2</version>
+    <version>1.0.0-a1</version>
     <modules>
         <module>core-fw</module>
         <module>core-fw-spring</module>

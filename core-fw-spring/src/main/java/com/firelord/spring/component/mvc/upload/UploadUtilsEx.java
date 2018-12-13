@@ -31,4 +31,29 @@ public class UploadUtilsEx {
     }
 
     //#endregion
+
+    //#region getInVoEx
+
+    /**
+     * get UploadInVoEx
+     * config in application.properties
+     * spring.servlet.multipart.enabled=true
+     * spring.servlet.multipart.file-size-threshold=0
+     * spring.servlet.multipart.location=c:/tmp
+     * spring.servlet.multipart.max-file-size=1MB
+     * spring.servlet.multipart.max-request-size=10MB
+     * spring.servlet.multipart.resolve-lazily=false
+     *
+     * @param oReqVo StandardMultipartHttpServletRequest
+     * @return UploadInVoEx
+     */
+    public static UploadInVoEx getInVoEx(StandardMultipartHttpServletRequest oReqVo) {
+        UploadInVoEx oInVo = new UploadInVoEx();
+
+        oInVo.setFileMap(oReqVo.getFileMap());
+
+        return oInVo;
+    }
+
+    //#endregion
 }

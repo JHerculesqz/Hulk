@@ -85,6 +85,68 @@
                 </repository>
             </distributionManagement>
         </profile>
+
+        <profile>
+            <id>debug</id>
+            <build>
+                <plugins>
+                    <!-- Source -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>2.2.1</version>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <!-- Javadoc -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>2.9.1</version>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <!-- GPG -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.6</version>
+                        <executions>
+                            <execution>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+            <distributionManagement>
+                <snapshotRepository>
+                    <id>nexus</id>
+                    <name>Nexus Snapshot</name>
+                    <url>http://localhost:8081/repository/core-fw-java/</url>
+                </snapshotRepository>
+                <repository>
+                    <id>nexus</id>
+                    <name>Nexus Snapshot</name>
+                    <url>http://localhost:8081/repository/core-fw-java/</url>
+                </repository>
+            </distributionManagement>
+        </profile>
     </profiles>
 
     <!--CODE-->
@@ -97,7 +159,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.jherculesqz</groupId>
     <artifactId>core-fw-spring-security</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.0-a1</version>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -115,7 +177,7 @@
         <dependency>
             <groupId>com.github.jherculesqz</groupId>
             <artifactId>core-fw-spring</artifactId>
-            <version>1.0.2</version>
+            <version>1.0.0-a1</version>
         </dependency>
 
         <dependency>
