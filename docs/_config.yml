@@ -4,7 +4,7 @@
 
 # Site
 title: Hulk
-subtitle: 
+subtitle:
 description:
 keywords:
 author: 
@@ -13,9 +13,9 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://jherculesqz.github.io/Hulk/
+url: https://jherculesqz.github.io/Hulk
 root: /Hulk/
-permalink: :title/ #:year/:month/:day/:title/
+permalink: :year/:month/:day/:title/
 permalink_defaults:
 
 # Directory
