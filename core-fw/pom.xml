@@ -85,7 +85,6 @@
                 </repository>
             </distributionManagement>
         </profile>
-
         <profile>
             <id>debug</id>
             <build>
@@ -138,12 +137,12 @@
                 <snapshotRepository>
                     <id>nexus</id>
                     <name>Nexus Snapshot</name>
-                    <url>http://localhost:8081/repository/core-fw-java/</url>
+                    <url>http://127.0.0.1:8081/repository/maven_host_core/</url>
                 </snapshotRepository>
                 <repository>
                     <id>nexus</id>
                     <name>Nexus Snapshot</name>
-                    <url>http://localhost:8081/repository/core-fw-java/</url>
+                    <url>http://127.0.0.1:8081/repository/maven_host_core/</url>
                 </repository>
             </distributionManagement>
         </profile>
