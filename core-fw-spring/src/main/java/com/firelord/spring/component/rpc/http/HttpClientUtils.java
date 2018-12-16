@@ -113,7 +113,7 @@ public class HttpClientUtils {
         return lstParams;
     }
 
-    public String get(String strUrl) {
+    public String getSimple(String strUrl) {
         String strRes = "";
 
         try {
