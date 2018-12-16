@@ -1,4 +1,4 @@
-package com.firelord.spring.component.threadpool.provider.vo;
+package com.firelord.spring.component.threadpool.threadbak.vo;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,6 +1,5 @@
-package com.firelord.spring.component.threadpool;
+package com.firelord.spring.component.threadpool.threadbak;
 
-import com.firelord.spring.component.threadpool.provider.ThreadPoolProvider;
 import com.firelord.spring.core.ioc.IOCUtils;
 
 /**

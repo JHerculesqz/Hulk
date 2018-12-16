@@ -1,6 +1,6 @@
-package com.firelord.spring.component.threadpool.provider;
+package com.firelord.spring.component.threadpool.threadbak;
 
-import com.firelord.spring.component.threadpool.provider.vo.ConfigThreadPoolVo;
+import com.firelord.spring.component.threadpool.threadbak.vo.ConfigThreadPoolVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
