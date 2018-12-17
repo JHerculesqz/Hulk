@@ -155,6 +155,7 @@
         <version>1.0.0-a1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
+    <groupId>com.github.jherculesqz</groupId>
     <artifactId>core-fw</artifactId>
     <version>1.0.0-a1</version>
     <properties>

@@ -4,9 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <!--OSS-->
     <name>core-fw-javafx</name>
-    <description>It is a Java tool class library, pure Java, independent of heavy frameworks like Spring, easy to use
-        for lightweight projects and improve development efficiency
-    </description>
+    <description></description>
     <url>https://github.com/JHerculesqz/core-fw-java/core-fw</url>
     <licenses>
         <license>
@@ -85,7 +83,6 @@
                 </repository>
             </distributionManagement>
         </profile>
-
         <profile>
             <id>debug</id>
             <build>
@@ -156,6 +153,7 @@
         <version>1.0.0-a1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
+    <groupId>com.github.jherculesqz</groupId>
     <artifactId>core-fw-javafx</artifactId>
     <version>1.0.0-a1</version>
     <properties>

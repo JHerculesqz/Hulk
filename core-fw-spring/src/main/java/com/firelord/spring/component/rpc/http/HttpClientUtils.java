@@ -1,7 +1,9 @@
 package com.firelord.spring.component.rpc.http;
 
+import com.firelord.component.json.JsonUtils;
 import com.firelord.spring.component.rpc.http.vo.HttpClientInVo;
 import com.firelord.spring.component.rpc.http.vo.HttpClientOutVo;
+import com.firelord.spring.component.rpc.http.vo.ReqVo;
 import org.apache.http.Consts;
 import org.apache.http.HttpEntity;
 import org.apache.http.NameValuePair;
@@ -113,6 +115,12 @@ public class HttpClientUtils {
         return lstParams;
     }
 
+    /**
+     * simple get
+     *
+     * @param strUrl url with params
+     * @return response content
+     */
     public String getSimple(String strUrl) {
         String strRes = "";
 
@@ -227,6 +235,48 @@ public class HttpClientUtils {
         }
 
         return oOutVo;
+    }
+
+    /**
+     * post simple
+     *
+     * @param strUrl url with param
+     * @param oReqVo ReqVo
+     * @param oClazz RespVo.Class
+     * @param <T>    RespVo
+     * @return RespVo
+     */
+    public <T> T postSimple(String strUrl, ReqVo oReqVo, Class<T> oClazz) {
+        T oRes = null;
+
+        try {
+            //URI
+            HttpPost oHttpPost = new HttpPost(strUrl);
+
+            //Input
+            ContentType oContentType = ContentType.create("application/json",
+                    Consts.UTF_8);
+            String strInput = JsonUtils.toStr(oReqVo);
+            StringEntity oEntity = new StringEntity(strInput, oContentType);
+            oEntity.setChunked(true);
+            oHttpPost.setEntity(oEntity);
+
+            //Execute
+            CloseableHttpResponse oResponse = this.httpclient.execute(oHttpPost);
+
+            //Output
+            HttpEntity oHttpEntity = oResponse.getEntity();
+            String strOutput = EntityUtils.toString(oHttpEntity);
+            oRes = JsonUtils.toObj(strOutput, oClazz);
+            EntityUtils.consume(oHttpEntity);
+
+            //Destroy
+            oResponse.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return oRes;
     }
 
     //#endregion
