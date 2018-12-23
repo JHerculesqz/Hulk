@@ -1,6 +1,6 @@
 package com.firelord.spring.component.rpc.http.vo;
 
-import com.firelord.component.json.JsonUtils;
+import com.firelord.component.seri.json.JsonUtils;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;

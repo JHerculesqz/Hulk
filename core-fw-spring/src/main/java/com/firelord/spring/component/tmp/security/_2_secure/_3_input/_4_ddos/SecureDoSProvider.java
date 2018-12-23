@@ -1,6 +1,6 @@
 package com.firelord.spring.component.tmp.security._2_secure._3_input._4_ddos;
 
-import com.firelord.component.log.LogUtilsEx;
+import com.firelord.spring.component.misc.log.LogUtilsEx;
 import com.firelord.spring.component.mvc.servlet.ServletUtilsEx;
 import com.firelord.spring.component.tmp.security._2_secure._3_input.SecureInputUtilsEx;
 

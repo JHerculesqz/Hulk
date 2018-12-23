@@ -1,6 +1,5 @@
 package com.firelord.component.process;
 
-import com.firelord.component.log.LogUtilsEx;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -162,7 +161,7 @@ public class ProcessUtilsEx {
             }
             oProcess.waitFor();
         } catch (Exception ex) {
-            LogUtilsEx.log("[ProcessUtilsEx.execSimple]ex..." + ex.getMessage(), IS_DEBUG);
+            System.out.println("[ProcessUtilsEx.execSimple]ex..." + ex.getMessage());
         }
 
         return strRes.toString();
@@ -208,7 +207,7 @@ public class ProcessUtilsEx {
             // stream..." + strLine);
             // }
             int iReturnCode = oProcess.waitFor();
-            LogUtilsEx.log("[ProcessUtilsEx.killProcessByName]exit code..." + iReturnCode, IS_DEBUG);
+            System.out.println("[ProcessUtilsEx.killProcessByName]exit code..." + iReturnCode);
         } catch (IOException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
@@ -222,7 +221,7 @@ public class ProcessUtilsEx {
                     strProcessName);
             Process oProcess = Runtime.getRuntime().exec(strCmd);
             int iReturnCode = oProcess.waitFor();
-            LogUtilsEx.log("[ProcessUtilsEx.killProcessByPID]exit code..." + iReturnCode, IS_DEBUG);
+            System.out.println("[ProcessUtilsEx.killProcessByPID]exit code..." + iReturnCode);
         } catch (IOException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
@@ -247,7 +246,7 @@ public class ProcessUtilsEx {
             // 2.start Process
             Runtime.getRuntime().exec(strExecCmd);
         } catch (IOException e) {
-            LogUtilsEx.log("[ProcessUtilsEx.runBat]ex..." + e.getMessage(), IS_DEBUG);
+            System.out.println("[ProcessUtilsEx.runBat]ex..." + e.getMessage());
         }
     }
 

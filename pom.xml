@@ -135,13 +135,16 @@
     <version>1.0.0-a1</version>
     <modules>
         <module>core-fw</module>
+        <module>core-fw-lic</module>
+        <module>core-fw-javafx</module>
         <module>core-fw-spring</module>
         <module>core-fw-spring-security</module>
-        <module>core-fw-javafx</module>
-        <module>core-fw-spring-test</module>
-        <module>core-fw-spring-test-db-mybatis</module>
-        <module>core-fw-spring-test-db-es</module>
-        <module>core-fw-spring-test-db-mongo</module>
-        <module>core-fw-spring-test-security</module>
+        <module>test-core-fw</module>
+        <module>test-core-fw-lic</module>
+        <module>test-core-fw-spring</module>
+        <module>test-core-fw-spring-db-es</module>
+        <module>test-core-fw-spring-db-mongo</module>
+        <module>test-core-fw-spring-db-mybatis</module>
+        <module>test-core-fw-spring-security</module>
     </modules>
 </project>

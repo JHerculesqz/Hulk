@@ -1,6 +1,6 @@
 package com.firelord.spring.component.tmp.distribute.redis.lock;
 
-import com.firelord.component.log.LogUtilsEx;
+import com.firelord.spring.component.misc.log.LogUtilsEx;
 import com.firelord.spring.component.tmp.distribute.DistributeLockUtilsEx;
 import com.firelord.spring.component.tmp.distribute.IDistributeLockProvider;
 import lombok.Getter;

@@ -1,7 +1,7 @@
 package com.firelord.spring.component.tmp.security._2_secure._3_input._5_whitelst;
 
 
-import com.firelord.component.log.LogUtilsEx;
+import com.firelord.spring.component.misc.log.LogUtilsEx;
 import com.firelord.spring.component.tmp.security._2_secure._3_input.SecureInputUtilsEx;
 
 import java.util.Arrays;

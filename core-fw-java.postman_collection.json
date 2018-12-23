@@ -6,68 +6,857 @@
 	},
 	"item": [
 		{
-			"name": "IOC",
+			"name": "core-fw",
 			"item": [
 				{
-					"name": "ioc1/viaAutowire",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "http://localhost:9000/ioc1/viaAutowire",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "9000",
-							"path": [
-								"ioc1",
-								"viaAutowire"
-							]
+					"name": "component",
+					"item": [
+						{
+							"name": "os",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:9000/misc/os/test",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"misc",
+										"os",
+										"test"
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "core-fw-spring",
+			"item": [
+				{
+					"name": "component",
+					"item": [
+						{
+							"name": "misc",
+							"item": [
+								{
+									"name": "log",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "http://localhost:9000/misc/log/test1",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "9000",
+											"path": [
+												"misc",
+												"log",
+												"test1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "geoCoderReverse",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "http://localhost:9000/misc/geo/geoCoderReverse",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "9000",
+											"path": [
+												"misc",
+												"geo",
+												"geoCoderReverse"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "mvc",
+							"item": [
+								{
+									"name": "mvc/cookie/test1",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/x-www-form-urlencoded"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "http://localhost:9000/mvc/cookie/test1",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "9000",
+											"path": [
+												"mvc",
+												"cookie",
+												"test1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "mvc/session/test1",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "http://localhost:9000/mvc/session/test1",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "9000",
+											"path": [
+												"mvc",
+												"session",
+												"test1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "mvc/i18n/test1",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/x-www-form-urlencoded"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "http://localhost:9000/mvc/i18n/test1",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "9000",
+											"path": [
+												"mvc",
+												"i18n",
+												"test1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "mvc/upload/test1",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/x-www-form-urlencoded",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "file1",
+													"type": "text"
+												},
+												{
+													"key": "file",
+													"type": "file",
+													"src": ""
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:9000/mvc/upload/test1",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "9000",
+											"path": [
+												"mvc",
+												"upload",
+												"test1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "mvc/servlet/test1",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "id",
+												"value": "xxxxxx",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "http://localhost:9000/mvc/servlet/test1?param1=1&param2=2&param2=3&param2=4",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "9000",
+											"path": [
+												"mvc",
+												"servlet",
+												"test1"
+											],
+											"query": [
+												{
+													"key": "param1",
+													"value": "1"
+												},
+												{
+													"key": "param2",
+													"value": "2"
+												},
+												{
+													"key": "param2",
+													"value": "3"
+												},
+												{
+													"key": "param2",
+													"value": "4"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "rpc",
+							"item": [
+								{
+									"name": "http",
+									"item": [
+										{
+											"name": "consumerGet",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"name": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": ""
+												},
+												"url": {
+													"raw": "http://localhost:9000/rpc/http/consumerGet",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "9000",
+													"path": [
+														"rpc",
+														"http",
+														"consumerGet"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "consumerGetErr",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"name": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": ""
+												},
+												"url": {
+													"raw": "http://localhost:9000/rpc/http/consumerGet",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "9000",
+													"path": [
+														"rpc",
+														"http",
+														"consumerGet"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "consumerPostJson",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"name": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": ""
+												},
+												"url": {
+													"raw": "http://localhost:9000/rpc/http/consumerPostJson",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "9000",
+													"path": [
+														"rpc",
+														"http",
+														"consumerPostJson"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "consumerPostJsonErr",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"name": "Content-Type",
+														"type": "text",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": ""
+												},
+												"url": {
+													"raw": "http://localhost:9000/rpc/http/consumerPostJsonErr",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "9000",
+													"path": [
+														"rpc",
+														"http",
+														"consumerPostJsonErr"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "consumerPostForm",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"name": "Content-Type",
+														"type": "text",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": ""
+												},
+												"url": {
+													"raw": "http://localhost:9000/rpc/http/consumerPostForm",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "9000",
+													"path": [
+														"rpc",
+														"http",
+														"consumerPostForm"
+													]
+												}
+											},
+											"response": []
+										}
+									],
+									"_postman_isSubFolder": true
+								},
+								{
+									"name": "ws",
+									"item": [],
+									"_postman_isSubFolder": true
+								},
+								{
+									"name": "grpc",
+									"item": [],
+									"_postman_isSubFolder": true
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "threadpool",
+							"item": [
+								{
+									"name": "threadpool/test1",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/x-www-form-urlencoded"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "http://localhost:9000/threadpool/test1",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "9000",
+											"path": [
+												"threadpool",
+												"test1"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						}
+					],
+					"_postman_isSubFolder": true
 				},
 				{
-					"name": "ioc1/viaIOCUtils",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "http://localhost:9000/ioc1/viaIOCUtils",
-							"protocol": "http",
-							"host": [
-								"localhost"
+					"name": "core",
+					"item": [
+						{
+							"name": "IOC",
+							"item": [
+								{
+									"name": "ioc1/viaAutowire",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "http://localhost:9000/ioc1/viaAutowire",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "9000",
+											"path": [
+												"ioc1",
+												"viaAutowire"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ioc1/viaIOCUtils",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "http://localhost:9000/ioc1/viaIOCUtils",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "9000",
+											"path": [
+												"ioc1",
+												"viaIOCUtils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ioc2/viaAutowire",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "http://localhost:9000/ioc2/viaAutowire",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "9000",
+											"path": [
+												"ioc2",
+												"viaAutowire"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ioc2/viaIOCUtils",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "http://localhost:9000/ioc2/viaIOCUtils",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "9000",
+											"path": [
+												"ioc2",
+												"viaIOCUtils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ioc3/viaCustomProperties",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "http://localhost:9000/ioc3/viaCustomProperties",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "9000",
+											"path": [
+												"ioc3",
+												"viaCustomProperties"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ioc3/viaApplicationProperties",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "http://localhost:9000/ioc3/viaApplicationProperties",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "9000",
+											"path": [
+												"ioc3",
+												"viaApplicationProperties"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ioc4/viaShell",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "http://localhost:9000/ioc4/viaShell",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "9000",
+											"path": [
+												"ioc4",
+												"viaShell"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ioc4/viaApplicationProperties",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "http://localhost:9000/ioc4/viaApplicationProperties",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "9000",
+											"path": [
+												"ioc4",
+												"viaApplicationProperties"
+											]
+										}
+									},
+									"response": []
+								}
 							],
-							"port": "9000",
-							"path": [
-								"ioc1",
-								"viaIOCUtils"
-							]
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "AOP",
+							"item": [
+								{
+									"name": "test1",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "http://localhost:9000/aop/test1",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "9000",
+											"path": [
+												"aop",
+												"test1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "test2",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "http://localhost:9000/aop/test2",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "9000",
+											"path": [
+												"aop",
+												"test2"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
 						}
-					},
-					"response": []
-				},
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "core-fw-spring-security",
+			"item": [
 				{
-					"name": "ioc2/viaAutowire",
+					"name": "security",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -81,160 +870,15 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:9000/ioc2/viaAutowire",
+							"raw": "http://localhost:9000/security/test",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "9000",
 							"path": [
-								"ioc2",
-								"viaAutowire"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "ioc2/viaIOCUtils",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "http://localhost:9000/ioc2/viaIOCUtils",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "9000",
-							"path": [
-								"ioc2",
-								"viaIOCUtils"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "ioc3/viaCustomProperties",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "http://localhost:9000/ioc3/viaCustomProperties",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "9000",
-							"path": [
-								"ioc3",
-								"viaCustomProperties"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "ioc3/viaApplicationProperties",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "http://localhost:9000/ioc3/viaApplicationProperties",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "9000",
-							"path": [
-								"ioc3",
-								"viaApplicationProperties"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "ioc4/viaShell",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "http://localhost:9000/ioc4/viaShell",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "9000",
-							"path": [
-								"ioc4",
-								"viaShell"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "ioc4/viaApplicationProperties",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "http://localhost:9000/ioc4/viaApplicationProperties",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "9000",
-							"path": [
-								"ioc4",
-								"viaApplicationProperties"
+								"security",
+								"test"
 							]
 						}
 					},
@@ -243,70 +887,7 @@
 			]
 		},
 		{
-			"name": "AOP",
-			"item": [
-				{
-					"name": "test1",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "http://localhost:9000/aop/test1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "9000",
-							"path": [
-								"aop",
-								"test1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "test2",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "http://localhost:9000/aop/test2",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "9000",
-							"path": [
-								"aop",
-								"test2"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "DB",
+			"name": "core-fw-spring-db",
 			"item": [
 				{
 					"name": "MyBatis",
@@ -419,15 +1000,79 @@
 			]
 		},
 		{
-			"name": "Security",
+			"name": "core-fw-lic",
 			"item": [
 				{
-					"name": "security",
+					"name": "gen",
 					"request": {
 						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"subject\\\":\\\"license_demo\\\", \\\"privateAlias\\\":\\\"privateKey\\\", \\\"keyPass\\\":\\\"private_qwer1234%\\\", \\\"storePass\\\":\\\"public_qwer1234%\\\", \\\"licensePath\\\":\\\"C:/1.Monkey/1.Research/4.SCMGit/core-fw-java/z-devops/lic/license.lic\\\", \\\"privateKeysStorePath\\\":\\\"C:/1.Monkey/1.Research/4.SCMGit/core-fw-java/z-devops/lic/privateKeys.keystore\\\", \\\"issuedTime\\\":\\\"2018-12-20 00:00:00\\\", \\\"expiryTime\\\":\\\"2018-12-22 00:00:00\\\", \\\"consumerType\\\":\\\"User\\\", \\\"consumerAmount\\\":1, \\\"description\\\":\\\"这是证书描述信息\\\", \\\"osOutMo\\\":{\\\"ipLst\\\":[\\\"192.168.31.132\\\"], \\\"macLst\\\":[\\\"9C-B6-D0-D0-21-B1\\\"], \\\"cpu\\\":\\\"BFEBFBFF000506E3\\\", \\\"mainBoard\\\":\\\".JPH2QF2.CN129636C70014.\\\"}}\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9000/lic/gen",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"lic",
+								"gen"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "install",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"subject\\\":\\\"license_demo\\\", \\\"publicAlias\\\":\\\"publicCert\\\", \\\"storePass\\\":\\\"public_password1234\\\", \\\"licensePath\\\":\\\"C:/1.Monkey/1.Research/4.SCMGit/core-fw-java/z-devops/lic/license.lic\\\", \\\"publicKeysStorePath\\\":\\\"C:/1.Monkey/1.Research/4.SCMGit/core-fw-java/z-devops/lic/publicCerts.keystore\\\"}\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9000/lic/install",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"lic",
+								"install"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "check",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
 								"value": "application/json"
 							}
 						],
@@ -436,15 +1081,15 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:9000/security/test",
+							"raw": "http://localhost:9000/lic/check",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "9000",
 							"path": [
-								"security",
-								"test"
+								"lic",
+								"check"
 							]
 						}
 					},
@@ -453,235 +1098,48 @@
 			]
 		},
 		{
-			"name": "MVC",
-			"item": [
-				{
-					"name": "mvc/cookie/test1",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"type": "text",
-								"value": "application/x-www-form-urlencoded"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "http://localhost:9000/mvc/cookie/test1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "9000",
-							"path": [
-								"mvc",
-								"cookie",
-								"test1"
-							]
-						}
+			"name": "百度提交",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/plain "
 					},
-					"response": []
+					{
+						"key": "User-Agent",
+						"value": "curl/7.12.1"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "http://www.firelordtech.com\nhttp://www.firelordtech.com/data-flow/\nhttp://www.firelordtech.com/data-brain/\nhttp://www.firelordtech.com/data-toolbox/\nhttp://www.firelordtech.com/%E5%B7%A5%E4%B8%9A%E7%89%A9%E8%81%94%E7%BD%91-%E5%B7%A5%E6%8E%A7%E4%BA%91/\nhttp://www.firelordtech.com/%E5%B7%A5%E4%B8%9A%E7%89%A9%E8%81%94%E7%BD%91-%E6%BF%80%E5%85%89%E4%BA%91/\nhttp://www.firelordtech.com/%E8%A1%8C%E4%B8%9A%E8%BD%AF%E4%BB%B6-3d%E6%95%B0%E6%8E%A7/\nhttp://www.firelordtech.com/%E8%A1%8C%E4%B8%9A%E8%BD%AF%E4%BB%B6-%E7%94%B5%E5%95%86datav/\nhttp://www.firelordtech.com/%E8%BD%AF%E4%BB%B6%E5%92%A8%E8%AF%A2/\nhttp://www.firelordtech.com/%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98/\nhttp://www.firelordtech.com/%E8%BD%AF%E4%BB%B6%E5%9F%B9%E8%AE%AD/\n"
 				},
-				{
-					"name": "mvc/session/test1",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
+				"url": {
+					"raw": "http://data.zz.baidu.com/urls?site=www.firelordtech.com&token=oyooqAJyjOpdpabF",
+					"protocol": "http",
+					"host": [
+						"data",
+						"zz",
+						"baidu",
+						"com"
+					],
+					"path": [
+						"urls"
+					],
+					"query": [
+						{
+							"key": "site",
+							"value": "www.firelordtech.com"
 						},
-						"url": {
-							"raw": "http://localhost:9000/mvc/session/test1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "9000",
-							"path": [
-								"mvc",
-								"session",
-								"test1"
-							]
+						{
+							"key": "token",
+							"value": "oyooqAJyjOpdpabF"
 						}
-					},
-					"response": []
-				},
-				{
-					"name": "mvc/i18n/test1",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"type": "text",
-								"value": "application/x-www-form-urlencoded"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "http://localhost:9000/mvc/i18n/test1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "9000",
-							"path": [
-								"mvc",
-								"i18n",
-								"test1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "mvc/upload/test1",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/x-www-form-urlencoded",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "name",
-									"value": "file1",
-									"type": "text"
-								},
-								{
-									"key": "file",
-									"type": "file",
-									"src": ""
-								}
-							]
-						},
-						"url": {
-							"raw": "http://localhost:9000/mvc/upload/test1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "9000",
-							"path": [
-								"mvc",
-								"upload",
-								"test1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "mvc/servlet/test1",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "id",
-								"value": "xxxxxx",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "http://localhost:9000/mvc/servlet/test1?param1=1&param2=2&param2=3&param2=4",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "9000",
-							"path": [
-								"mvc",
-								"servlet",
-								"test1"
-							],
-							"query": [
-								{
-									"key": "param1",
-									"value": "1"
-								},
-								{
-									"key": "param2",
-									"value": "2"
-								},
-								{
-									"key": "param2",
-									"value": "3"
-								},
-								{
-									"key": "param2",
-									"value": "4"
-								}
-							]
-						}
-					},
-					"response": []
+					]
 				}
-			]
-		},
-		{
-			"name": "ThreadPool",
-			"item": [
-				{
-					"name": "threadpool/test1",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"type": "text",
-								"value": "application/x-www-form-urlencoded"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "http://localhost:9000/threadpool/test1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "9000",
-							"path": [
-								"threadpool",
-								"test1"
-							]
-						}
-					},
-					"response": []
-				}
-			]
+			},
+			"response": []
 		}
 	]
 }

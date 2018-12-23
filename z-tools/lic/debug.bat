@@ -1,0 +1,2 @@
+
+mkdir c:\test\lic
