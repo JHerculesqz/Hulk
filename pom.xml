@@ -140,7 +140,6 @@
         <module>core-fw-spring</module>
         <module>core-fw-spring-security</module>
         <module>test-core-fw</module>
-        <module>test-core-fw-lic</module>
         <module>test-core-fw-spring</module>
         <module>test-core-fw-spring-db-es</module>
         <module>test-core-fw-spring-db-mongo</module>

@@ -23,24 +23,25 @@ public class LicCheck {
      * @param oLicCheckInMo LicCheckInMo
      * @return LicenseContent
      */
-    public static synchronized LicenseContent install(LicCheckInMo oLicCheckInMo) {
-        LicenseContent oLicenseContent = null;
+    public static synchronized boolean install(LicCheckInMo oLicCheckInMo) {
+        boolean bRes = true;
 
         try {
             DateFormat oDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             LicenseParam oLicenseParam = _initLicenseParam(oLicCheckInMo);
             LicenseManager oLicenseManager = LicMgrHolder.getInstance(oLicenseParam);
             oLicenseManager.uninstall();
-            oLicenseContent = oLicenseManager.install(new File(oLicCheckInMo.getLicensePath()));
+            LicenseContent oLicenseContent = oLicenseManager.install(new File(oLicCheckInMo.getLicensePath()));
             System.out.println(MessageFormat.format("证书安装成功，证书有效期：{0} - {1}",
                     oDateFormat.format(oLicenseContent.getNotBefore()),
                     oDateFormat.format(oLicenseContent.getNotAfter())));
         } catch (Exception e) {
-            System.out.println("证书安装失败！");
-            e.printStackTrace();
+            System.out.println("证书安装失败！" + e.getMessage());
+            //e.printStackTrace();
+            bRes = false;
         }
 
-        return oLicenseContent;
+        return bRes;
     }
 
     private static LicenseParam _initLicenseParam(LicCheckInMo oLicCheckInMo) {
@@ -78,8 +79,8 @@ public class LicCheck {
                     oDateFormat.format(licenseContent.getNotAfter())));
             return true;
         } catch (Exception e) {
-            System.out.println("证书校验失败！");
-            e.printStackTrace();
+            System.out.println("证书校验失败！" + e.getMessage());
+            //e.printStackTrace();
             return false;
         }
     }
