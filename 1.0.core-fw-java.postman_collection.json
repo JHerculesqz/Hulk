@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "5f229716-50d7-4dcd-a4c5-67a2056bc818",
-		"name": "core-fw-java",
+		"name": "1.0.core-fw-java",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -121,104 +121,6 @@
 		{
 			"name": "core-fw-javafx",
 			"item": []
-		},
-		{
-			"name": "core-fw-lic",
-			"item": [
-				{
-					"name": "gen",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"subject\\\":\\\"license_demo\\\", \\\"privateAlias\\\":\\\"privateKey\\\", \\\"keyPass\\\":\\\"private_qwer1234%\\\", \\\"storePass\\\":\\\"public_qwer1234%\\\", \\\"licensePath\\\":\\\"C:/1.Monkey/1.Research/4.SCMGit/core-fw-java/z-devops/lic/license.lic\\\", \\\"privateKeysStorePath\\\":\\\"C:/1.Monkey/1.Research/4.SCMGit/core-fw-java/z-devops/lic/privateKeys.keystore\\\", \\\"issuedTime\\\":\\\"2018-12-20 00:00:00\\\", \\\"expiryTime\\\":\\\"2018-12-22 00:00:00\\\", \\\"consumerType\\\":\\\"User\\\", \\\"consumerAmount\\\":1, \\\"description\\\":\\\"这是证书描述信息\\\", \\\"osOutMo\\\":{\\\"ipLst\\\":[\\\"192.168.31.132\\\"], \\\"macLst\\\":[\\\"9C-B6-D0-D0-21-B1\\\"], \\\"cpu\\\":\\\"BFEBFBFF000506E3\\\", \\\"mainBoard\\\":\\\".JPH2QF2.CN129636C70014.\\\"}}\"\r\n}"
-						},
-						"url": {
-							"raw": "http://localhost:9000/lic/gen",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "9000",
-							"path": [
-								"lic",
-								"gen"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "install",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"type": "text",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"subject\\\":\\\"license_demo\\\", \\\"publicAlias\\\":\\\"publicCert\\\", \\\"storePass\\\":\\\"public_password1234\\\", \\\"licensePath\\\":\\\"C:/1.Monkey/1.Research/4.SCMGit/core-fw-java/z-devops/lic/license.lic\\\", \\\"publicKeysStorePath\\\":\\\"C:/1.Monkey/1.Research/4.SCMGit/core-fw-java/z-devops/lic/publicCerts.keystore\\\"}\"\r\n}"
-						},
-						"url": {
-							"raw": "http://localhost:9000/lic/install",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "9000",
-							"path": [
-								"lic",
-								"install"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "check",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"type": "text",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "http://localhost:9000/lic/check",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "9000",
-							"path": [
-								"lic",
-								"check"
-							]
-						}
-					},
-					"response": []
-				}
-			]
 		},
 		{
 			"name": "core-fw-spring",
