@@ -4,13 +4,14 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * OSOutMo
  */
 @ToString
-public class OSOutMo {
+public class OSOutMo implements Serializable {
     //#region Fields
 
     /**

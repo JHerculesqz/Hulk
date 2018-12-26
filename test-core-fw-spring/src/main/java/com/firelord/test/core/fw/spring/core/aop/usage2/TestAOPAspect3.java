@@ -9,7 +9,7 @@ import org.aspectj.lang.annotation.DeclareParents;
 public class TestAOPAspect3 {
     //#region Fields
 
-    @DeclareParents(value = "com.firelord.test.core.aop.usage2.TestAOPService+",
+    @DeclareParents(value = "com.firelord.test.core.fw.spring.core.aop.usage2.TestAOPService+",
             defaultImpl = TestServiceAdvImpl.class)
     public TestServiceAdv testServiceAdv;
 

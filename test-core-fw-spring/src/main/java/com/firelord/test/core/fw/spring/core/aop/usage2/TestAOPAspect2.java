@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 public class TestAOPAspect2 {
     //#region pointCut
 
-    @Pointcut("execution(public * com.firelord.test.core.aop.usage2.TestAOPService.test(..))")
+    @Pointcut("execution(public * com.firelord.test.core.fw.spring.core.aop.usage2.TestAOPService.test(..))")
     public void pointCut() {
 
     }

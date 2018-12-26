@@ -135,7 +135,6 @@
     <version>1.0.0-a1</version>
     <modules>
         <module>core-fw</module>
-        <module>core-fw-lic</module>
         <module>core-fw-javafx</module>
         <module>core-fw-spring</module>
         <module>core-fw-spring-security</module>
