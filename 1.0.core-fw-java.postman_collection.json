@@ -132,6 +132,44 @@
 							"name": "misc",
 							"item": [
 								{
+									"name": "security",
+									"item": [
+										{
+											"name": "/misc/security/encrypt",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"name": "Content-Type",
+														"type": "text",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": ""
+												},
+												"url": {
+													"raw": "http://localhost:9000/misc/security/encrypt",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "9000",
+													"path": [
+														"misc",
+														"security",
+														"encrypt"
+													]
+												}
+											},
+											"response": []
+										}
+									],
+									"_postman_isSubFolder": true
+								},
+								{
 									"name": "log",
 									"request": {
 										"method": "POST",
