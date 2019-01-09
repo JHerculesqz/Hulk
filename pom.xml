@@ -137,12 +137,5 @@
         <module>core-fw</module>
         <module>core-fw-javafx</module>
         <module>core-fw-spring</module>
-        <module>core-fw-spring-security</module>
-        <module>test-core-fw</module>
-        <module>test-core-fw-spring</module>
-        <module>test-core-fw-spring-db-es</module>
-        <module>test-core-fw-spring-db-mongo</module>
-        <module>test-core-fw-spring-db-mybatis</module>
-        <module>test-core-fw-spring-security</module>
     </modules>
 </project>
