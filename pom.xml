@@ -63,7 +63,6 @@
                 </repository>
             </distributionManagement>
         </profile>
-
         <profile>
             <id>debug</id>
             <build>
