@@ -200,6 +200,17 @@ public class DateUtilsEx {
 
     //#endregion
 
+    //#region subDay
+
+    public static String subDay(String strTime1, int iDay4Sub, int iTimeZoneIndex, String strFormat) {
+        JDateTime oJDateTime1 = _initJDateTime(iTimeZoneIndex, strTime1);
+        oJDateTime1.subDay(iDay4Sub);
+        String strRes = strFormat.equals("") ? oJDateTime1.toString() : oJDateTime1.toString(strFormat);
+        return strRes;
+    }
+
+    //#endregion
+
     //#region timezone
 
     public static long transByTimezone(long iDateSrc, int iTimeZoneIndex) {
