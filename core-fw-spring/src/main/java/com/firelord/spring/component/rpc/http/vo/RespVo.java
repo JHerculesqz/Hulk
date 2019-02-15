@@ -73,5 +73,17 @@ public class RespVo {
         return oRespVo;
     }
 
+    public static void genRespVo4Err(String strErrCode, RespVo oRespVo) {
+        oRespVo.setOK(false);
+        RespErrVo oRespErrVo = new RespErrVo();
+        RespErrItemVo oRespErrItemVo = new RespErrItemVo();
+        oRespErrItemVo.setCode(strErrCode);
+        oRespErrItemVo.setDesc(strErrCode);
+        oRespErrItemVo.setReason(strErrCode);
+        oRespErrItemVo.setAdvice(strErrCode);
+        oRespErrVo.getItems().add(oRespErrItemVo);
+        oRespVo.setErrorObj(oRespErrVo);
+    }
+
     //#endregion
 }

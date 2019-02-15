@@ -9,6 +9,7 @@ import org.apache.http.HttpEntity;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.utils.URIBuilder;
@@ -305,6 +306,47 @@ public class HttpClientUtils {
                 ex.printStackTrace();
             }
         }
+    }
+
+    //#endregion
+
+    //#region delete
+
+    /**
+     * execute delete
+     *
+     * @param oInVo HttpClientInVo
+     * @return HttpClientOutVo
+     */
+    public HttpClientOutVo delete(HttpClientInVo oInVo) {
+        HttpClientOutVo oOutVo = new HttpClientOutVo();
+
+        try {
+            //URI
+            URI oURI = new URIBuilder()
+                    .setScheme("http")
+                    .setHost(oInVo.getHost())
+                    .setPath(oInVo.getUrl())
+                    .build();
+            HttpDelete oHttpDelete = new HttpDelete(oURI);
+
+            //Execute
+            CloseableHttpResponse oResponse = this.httpclient.execute(oHttpDelete);
+
+            //Output
+            oOutVo.setStatusCode(oResponse.getStatusLine().getStatusCode());
+            oOutVo.setReasonPhrase(oResponse.getStatusLine().getReasonPhrase());
+            HttpEntity oHttpEntity = oResponse.getEntity();
+            oOutVo.setContent(EntityUtils.toString(oHttpEntity));
+            EntityUtils.consume(oHttpEntity);
+
+            //Destroy
+            oResponse.close();
+        } catch (IOException | URISyntaxException e) {
+            e.printStackTrace();
+        }
+
+        return oOutVo;
     }
 
     //#endregion
