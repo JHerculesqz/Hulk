@@ -170,11 +170,13 @@ public class HttpClientUtils {
             HttpPost oHttpPost = new HttpPost(oURI);
 
             //Input
-            ContentType oContentType = ContentType.create("application/json",
-                    Consts.UTF_8);
-            StringEntity oEntity = new StringEntity(oInVo.getInput(), oContentType);
-            oEntity.setChunked(true);
-            oHttpPost.setEntity(oEntity);
+            if (null != oInVo.getInput()) {
+                ContentType oContentType = ContentType.create("application/json",
+                        Consts.UTF_8);
+                StringEntity oEntity = new StringEntity(oInVo.getInput(), oContentType);
+                oEntity.setChunked(true);
+                oHttpPost.setEntity(oEntity);
+            }
 
             //Execute
             CloseableHttpResponse oResponse = this.httpclient.execute(oHttpPost);
@@ -183,8 +185,10 @@ public class HttpClientUtils {
             oOutVo.setStatusCode(oResponse.getStatusLine().getStatusCode());
             oOutVo.setReasonPhrase(oResponse.getStatusLine().getReasonPhrase());
             HttpEntity oHttpEntity = oResponse.getEntity();
-            oOutVo.setContent(EntityUtils.toString(oHttpEntity));
-            EntityUtils.consume(oHttpEntity);
+            if (null != oHttpEntity) {
+                oOutVo.setContent(EntityUtils.toString(oHttpEntity));
+                EntityUtils.consume(oHttpEntity);
+            }
 
             //Destroy
             oResponse.close();
@@ -327,6 +331,7 @@ public class HttpClientUtils {
                     .setScheme("http")
                     .setHost(oInVo.getHost())
                     .setPath(oInVo.getUrl())
+                    .setParameters(this.genNVPLst(oInVo.getParams()))
                     .build();
             HttpDelete oHttpDelete = new HttpDelete(oURI);
 
@@ -337,8 +342,10 @@ public class HttpClientUtils {
             oOutVo.setStatusCode(oResponse.getStatusLine().getStatusCode());
             oOutVo.setReasonPhrase(oResponse.getStatusLine().getReasonPhrase());
             HttpEntity oHttpEntity = oResponse.getEntity();
-            oOutVo.setContent(EntityUtils.toString(oHttpEntity));
-            EntityUtils.consume(oHttpEntity);
+            if (null != oHttpEntity) {
+                oOutVo.setContent(EntityUtils.toString(oHttpEntity));
+                EntityUtils.consume(oHttpEntity);
+            }
 
             //Destroy
             oResponse.close();
