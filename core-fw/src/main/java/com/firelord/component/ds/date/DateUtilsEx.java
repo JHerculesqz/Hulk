@@ -2,10 +2,9 @@ package com.firelord.component.ds.date;
 
 import jodd.datetime.JDateTime;
 
-import java.util.Date;
-import java.util.List;
-import java.util.TimeZone;
-import java.util.TreeSet;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 /**
  * DateUtilsEx
@@ -23,6 +22,7 @@ public class DateUtilsEx {
     public static final String FORMAT3 = "YYYY-MM-DD";
     public static final String FORMAT4 = "YYYYMMDDhhmmss";
     public static final String FORMAT5 = "YYYYMMDD_hhmmssmss";
+    public static final String FORMAT6 = "hh:mm:ss";
 
     //#endregion
 
@@ -286,6 +286,27 @@ public class DateUtilsEx {
         int iRes = oJDateTime1.compareTo(oJDateTime2);
 
         return iRes > 0 ? true : false;
+    }
+
+    //#endregion
+
+    //#region dateToWeek
+
+    public static String dateToWeek(String strYMD) {
+        SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
+        String[] weekDays = {"周日", "周一", "周二", "周三", "周四", "周五", "周六"};
+        Calendar cal = Calendar.getInstance(); // 获得一个日历
+        Date datet = null;
+        try {
+            datet = f.parse(strYMD);
+            cal.setTime(datet);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        int w = cal.get(Calendar.DAY_OF_WEEK) - 1; // 指示一个星期中的某天。
+        if (w < 0)
+            w = 0;
+        return weekDays[w];
     }
 
     //#endregion

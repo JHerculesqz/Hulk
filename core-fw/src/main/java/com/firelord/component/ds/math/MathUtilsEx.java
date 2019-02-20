@@ -6,7 +6,7 @@ import java.math.BigDecimal;
  * MathUtilsEx
  */
 public class MathUtilsEx {
-    // #region toFix
+    //#region toFix
 
     /**
      * toFix
@@ -20,5 +20,5 @@ public class MathUtilsEx {
         return iRes;
     }
 
-    // #endregion
+    //#endregion
 }
