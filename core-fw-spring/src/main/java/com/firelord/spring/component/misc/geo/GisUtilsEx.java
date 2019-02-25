@@ -29,6 +29,7 @@ public class GisUtilsEx {
     public static GeoCoderOutVo geoCoderReverse(String strX, String strY, String strAPIKey) {
         String strUrl = String.format(URL_GEO_CODER_REVERSE, strX, strY, strAPIKey);
         String strRes = HttpClientUtils.getInstance().getSimple(strUrl);
+        System.out.println(strRes);
         JsonParser oJsonParser = new JsonParser();
         GeoCoderOutVo oRes = oJsonParser.parse(strRes, GeoCoderOutVo.class);
         return oRes;

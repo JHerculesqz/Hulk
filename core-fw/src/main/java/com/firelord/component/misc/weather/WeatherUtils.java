@@ -47,6 +47,7 @@ public class WeatherUtils {
             for (int i = 0; i < len; i++) {
                 Node n = nl.item(i);
                 String weather = n.getFirstChild().getNodeValue();
+                System.out.println(weather);
                 lstRes.add(weather);
             }
             inputStream.close();
