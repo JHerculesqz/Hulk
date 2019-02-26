@@ -4,7 +4,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
- *
+ * please use IOCUtils
  */
 public class IOCUtilsEx {
     //#region Fields
@@ -42,13 +42,13 @@ public class IOCUtilsEx {
      * [important]java bean config class sample:
      *
      * @param oAppConfigClazz java bean config class
-     * [Annotation]Configuration
-     * public class AppConfig {
-     * [Annotation]Bean
-     * public JavaBean1 javaBean1() {
-     * return new JavaBean1();
-     * }
-     * }
+     *                        [Annotation]Configuration
+     *                        public class AppConfig {
+     *                        [Annotation]Bean
+     *                        public JavaBean1 javaBean1() {
+     *                        return new JavaBean1();
+     *                        }
+     *                        }
      */
     public void init(Class<?> oAppConfigClazz) {
         this.ctx = new AnnotationConfigApplicationContext(oAppConfigClazz);
