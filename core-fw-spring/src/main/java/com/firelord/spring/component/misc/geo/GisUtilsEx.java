@@ -11,6 +11,8 @@ import jodd.json.JsonParser;
 public class GisUtilsEx {
     //#region Const
 
+    private static final String LOG = "[Hulk.GisUtilsEx]geoCoderReverse:";
+
     private static final String URL_GEO_CODER_REVERSE =
             "http://api.map.baidu.com/geocoder/v2/?location=%s,%s&output=json&ak=%s";
 
@@ -29,7 +31,7 @@ public class GisUtilsEx {
     public static GeoCoderOutVo geoCoderReverse(String strX, String strY, String strAPIKey) {
         String strUrl = String.format(URL_GEO_CODER_REVERSE, strX, strY, strAPIKey);
         String strRes = HttpClientUtils.getInstance().getSimple(strUrl);
-        System.out.println(strRes);
+        System.out.println(LOG + strRes);
         JsonParser oJsonParser = new JsonParser();
         GeoCoderOutVo oRes = oJsonParser.parse(strRes, GeoCoderOutVo.class);
         return oRes;
