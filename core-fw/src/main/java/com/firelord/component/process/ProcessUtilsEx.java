@@ -188,7 +188,8 @@ public class ProcessUtilsEx {
     /**
      * TODO:待验证
      *
-     * @param strProcessName strProcessName
+     * @param strProcessName         strProcessName
+     * @param strExcludeProcessTitle strExcludeProcessTitle
      */
     public static void killProcessByNameExcludeName(String strProcessName, String strExcludeProcessTitle) {
         try {

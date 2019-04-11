@@ -173,6 +173,64 @@
                     <target>8</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                    <charset>UTF-8</charset>
+                    <show>private</show>
+                    <nohelp>true</nohelp>
+                    <excludePackageNames>
+                        com.firelord.component.os.mxbean:
+                        com.firelord.component.os.env
+                    </excludePackageNames>
+                    <groups>
+                        <group>
+                            <title>Data Structure</title>
+                            <packages>com.firelord.component.ds*</packages>
+                        </group>
+                        <group>
+                            <title>IO</title>
+                            <packages>com.firelord.component.io*</packages>
+                        </group>
+                        <group>
+                            <title>JVM</title>
+                            <packages>com.firelord.component.jvm*</packages>
+                        </group>
+                        <group>
+                            <title>Misc</title>
+                            <packages>com.firelord.component.misc*</packages>
+                        </group>
+                        <group>
+                            <title>OS</title>
+                            <packages>com.firelord.component.os*</packages>
+                        </group>
+                        <group>
+                            <title>Process</title>
+                            <packages>com.firelord.component.process*</packages>
+                        </group>
+                        <group>
+                            <title>Serialization</title>
+                            <packages>com.firelord.component.seri*</packages>
+                        </group>
+                        <group>
+                            <title>Thread</title>
+                            <packages>com.firelord.component.thread*</packages>
+                        </group>
+                    </groups>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
     <dependencies>

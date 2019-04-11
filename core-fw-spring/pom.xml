@@ -168,6 +168,59 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                    <charset>UTF-8</charset>
+                    <show>private</show>
+                    <nohelp>true</nohelp>
+                    <excludePackageNames>
+                        com.firelord.spring.component.tmp.*
+                    </excludePackageNames>
+                    <groups>
+                        <group>
+                            <title>IOC</title>
+                            <packages>com.firelord.spring.core.ioc*</packages>
+                        </group>
+                        <group>
+                            <title>AOP</title>
+                            <packages>com.firelord.spring.core.aop*</packages>
+                        </group>
+                        <group>
+                            <title>DataBase</title>
+                            <packages>com.firelord.spring.component.db*</packages>
+                        </group>
+                        <group>
+                            <title>Misc</title>
+                            <packages>com.firelord.spring.component.misc*</packages>
+                        </group>
+                        <group>
+                            <title>MVC</title>
+                            <packages>com.firelord.spring.component.mvc*</packages>
+                        </group>
+                        <group>
+                            <title>RPC</title>
+                            <packages>com.firelord.spring.component.rpc*</packages>
+                        </group>
+                        <group>
+                            <title>Thread</title>
+                            <packages>com.firelord.spring.component.threadpool*</packages>
+                        </group>
+                    </groups>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
     <dependencies>
@@ -179,15 +232,15 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
             <!--<exclusions>-->
-                <!--<exclusion>-->
-                    <!--<groupId>org.springframework.boot</groupId>-->
-                    <!--<artifactId>spring-boot-starter-logging</artifactId>-->
-                <!--</exclusion>-->
+            <!--<exclusion>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-logging</artifactId>-->
+            <!--</exclusion>-->
             <!--</exclusions>-->
         </dependency>
         <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-log4j2</artifactId>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-starter-log4j2</artifactId>-->
         <!--</dependency>-->
         <dependency>
             <groupId>com.github.adyliu</groupId>

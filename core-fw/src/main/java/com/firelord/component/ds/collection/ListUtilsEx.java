@@ -12,7 +12,7 @@ public class ListUtilsEx {
     /**
      * is collection empty
      *
-     * @param lstSrc Collection<?>
+     * @param lstSrc Collection
      * @return true:is empty
      */
     public static boolean isEmpty(Collection<?> lstSrc) {
