@@ -1,0 +1,4 @@
+packages/
+.vs/
+core-fw/bin/
+core-fw/obj/
