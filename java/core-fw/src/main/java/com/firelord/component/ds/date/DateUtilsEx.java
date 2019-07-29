@@ -310,4 +310,17 @@ public class DateUtilsEx {
     }
 
     //#endregion
+
+    //#region dateToStr
+
+    public static String dateToStr(Date oDate, String strFormat) {
+        if(null == oDate){
+            return "";
+        }
+
+        SimpleDateFormat oSimpleDateFormat = new SimpleDateFormat(strFormat);
+        return oSimpleDateFormat.format(oDate);
+    }
+
+    //#endregion
 }
