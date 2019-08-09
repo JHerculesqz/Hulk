@@ -1,8 +1,14 @@
 package com.firelord;
 
+import com.firelord.wcsr.WCSRService;
+
 public class Application {
     public static void main(String[] args) {
-        test2();
+//        WCSRService.testProxy();
+//        WCSRService.testDecorator();
+//        WCSRService.testAdapter();
+//        WCSRService.testSingleton();
+        WCSRService.testObserver();
     }
 
     public static void test1() {
