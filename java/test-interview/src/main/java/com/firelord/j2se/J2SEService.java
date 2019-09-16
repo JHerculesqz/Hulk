@@ -1,8 +1,41 @@
 package com.firelord.j2se;
 
+import java.io.ByteArrayInputStream;
+import java.io.DataInputStream;
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.nio.ByteOrder;
 
 public class J2SEService {
+    //#region bigEndian
+
+    public static void testBigEndian() throws IOException {
+        byte[] arr = new byte[4];
+        arr[0] = 0x78;
+        arr[1] = 0x56;
+        arr[2] = 0x34;
+        arr[3] = 0x12;
+        ByteArrayInputStream oBAIS = new ByteArrayInputStream(arr);
+        DataInputStream oDIS = new DataInputStream(oBAIS);
+        String strRes = Integer.toHexString(oDIS.readInt());
+        System.out.println("JVM:" + strRes);
+        System.out.println("CPU:" + ByteOrder.nativeOrder());
+    }
+
+    //#endregion
+
+    //#region
+
+    public static void test() {
+        Integer.parseInt("12");
+        Integer.valueOf("12").intValue();
+
+        //byte a = 340;
+        //Byte b = 120;
+    }
+
+    //#endregion
+
     //#region testBreak
 
     public static void testBreak() {
