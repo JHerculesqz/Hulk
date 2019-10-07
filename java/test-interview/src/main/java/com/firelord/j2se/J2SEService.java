@@ -24,6 +24,72 @@ public class J2SEService {
 
     //#endregion
 
+    //#region formalAndActualParameter
+
+    public static void testFormalAndActualParameter() {
+        StringBuilder oSB1 = new StringBuilder("Hello");
+        StringBuilder oSB2 = new StringBuilder("Hello");
+        int i = 1;
+        testFormalAndActualParameter(oSB1, oSB2, i);
+        System.out.println(oSB1.toString());
+        System.out.println(oSB2.toString());
+        System.out.println(i);
+    }
+
+    private static void testFormalAndActualParameter(StringBuilder oArg1,
+                                                     StringBuilder oArg2,
+                                                     int iArg3) {
+        oArg1.append(" World");
+        oArg2 = new StringBuilder("Test");
+        iArg3 = 2;
+    }
+
+    //#endregion
+
+    //#region getClassName
+
+    public void testGetClassName() {
+        System.out.println("getClassName:" + super.getClass().getName());
+        System.out.println("getSuperClassName:" + this.getClass().getSuperclass().getName());
+    }
+
+    //#endregion
+
+    //#region localVar
+
+    public static void testLocalVar() {
+//        int i, j, k;
+//        i = 100;
+//        while (i > 0) {
+//            i = j * 2;
+//            System.out.println(j);
+//            k = k + 1;
+//            i--;
+//        }
+    }
+
+    //#endregion
+
+    //#region innerClass
+
+    static class InnerClass1{}
+    class InnerClass2{}
+    public static void innerClassContainer(){
+        class InnerClass3{}
+        InnerClass3 o = new InnerClass3();
+    }
+    interface InnerClass4{}
+    public static void innerClassContainer2(InnerClass4 oCallback){}
+    public static void testInnerClass(){
+        new J2SEService.InnerClass1();
+        new J2SEService();
+        innerClassContainer();
+        innerClassContainer2(new InnerClass4() {
+        });
+    }
+
+    //#endregion
+
     //#region
 
     public static void test() {
@@ -39,6 +105,8 @@ public class J2SEService {
     //#region testBreak
 
     public static void testBreak() {
+        Byte a = 120;
+
         A:
 
         for (int i = 0; i < 100; i++) {
