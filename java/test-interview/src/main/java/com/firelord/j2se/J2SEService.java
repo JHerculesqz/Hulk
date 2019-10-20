@@ -5,8 +5,98 @@ import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteOrder;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class J2SEService {
+    //#region testArrays
+
+    public static void testArrays() {
+        String[] arr = new String[3];
+        arr[0] = "a";
+        arr[1] = "b";
+        arr[2] = "c";
+        List<String> lst = Arrays.asList(arr);
+//        lst.add("d");
+
+        List<String> lst2 = new java.util.ArrayList<>(Arrays.asList(arr));
+//        lst.add("d");
+
+        List<String> lst3 = new ArrayList<>();
+        lst3.add("a");
+        lst3.add("b");
+        lst3.add("c");
+        Object[] arr3 = lst3.toArray();
+        String[] arr41 = new String[2];
+        String[] arr42 = lst3.toArray(arr41);
+        String[] arr51 = new String[3];
+        String[] arr52 = lst3.toArray(arr51);
+        String[] arr61 = new String[4];
+        String[] arr62 = lst3.toArray(arr61);
+
+        int count = 100 * 100 * 100;
+        List<Double> lst4 = new ArrayList<>(count);
+        for (int i = 0; i < count; i++) {
+            lst4.add(i * 1.0);
+        }
+        long start = System.nanoTime();
+        Double[] minArr = new Double[count - 1];
+        lst4.toArray(minArr);
+        long mid1 = System.nanoTime();
+        Double[] equalArr = new Double[count];
+        lst4.toArray(equalArr);
+        long mid2 = System.nanoTime();
+        Double[] maxArr = new Double[count * 2];
+        lst4.toArray(maxArr);
+        long end = System.nanoTime();
+        System.out.println("minArr:" + (mid1 - start) / (1000.0 * 1000.0) + "ms");
+        System.out.println("equalArr:" + (mid2 - mid1) / (1000.0 * 1000.0) + "ms");
+        System.out.println("maxArr:" + (end - mid2) / (1000.0 * 1000.0) + "ms");
+    }
+
+    //#endregion
+
+    //#region testExtendsSuper
+
+    public static void testExtendsSuper(){
+        List<Animal> animals = new ArrayList<>();
+        List<Cat> cats = new ArrayList<>();
+        List<Garfield> garfields = new ArrayList<>();
+        animals.add(new Animal());
+        cats.add(new Cat());
+        garfields.add(new Garfield());
+
+//        List<? extends Cat> extendsFromAnimal = animals; //放Cat和Cat的子类
+        List<? super Cat> superFromAnimal = animals;
+
+        List<? extends Cat> extendsFromCat = cats;
+        List<? super Cat> superFromCat = cats;
+
+        List<? extends Cat> extendsFromGarfield = garfields;
+//        List<? super Cat> superFromGarfield = garfields; //放Cat和Cat的父类
+
+        //extends集合不可add
+//        extendsFromCat.add(new Animal());
+//        extendsFromCat.add(new Cat());
+//        extendsFromCat.add(new Garfield());
+
+//        superFromCat.add(new Animal()); //只能加Cat和Cat的子类
+        superFromCat.add(new Cat());
+        superFromCat.add(new Garfield());
+
+        //super集合的get返回的只能是Object
+        //这样写会报错
+//        Animal animalInSuper = superFromAnimal.get(0);
+        Object animalInSuper = superFromAnimal.get(0);
+        Object catInSuper = superFromCat.get(0);
+
+        Cat catInExtends = extendsFromCat.get(0);
+//        Garfield garfieldInExtends = extendsFromGarfield.get(0); //泛型丢失，无法转型
+    }
+
+    //#endregion
+
     //#region bigEndian
 
     public static void testBigEndian() throws IOException {
@@ -72,15 +162,25 @@ public class J2SEService {
 
     //#region innerClass
 
-    static class InnerClass1{}
-    class InnerClass2{}
-    public static void innerClassContainer(){
-        class InnerClass3{}
+    static class InnerClass1 {
+    }
+
+    class InnerClass2 {
+    }
+
+    public static void innerClassContainer() {
+        class InnerClass3 {
+        }
         InnerClass3 o = new InnerClass3();
     }
-    interface InnerClass4{}
-    public static void innerClassContainer2(InnerClass4 oCallback){}
-    public static void testInnerClass(){
+
+    interface InnerClass4 {
+    }
+
+    public static void innerClassContainer2(InnerClass4 oCallback) {
+    }
+
+    public static void testInnerClass() {
         new J2SEService.InnerClass1();
         new J2SEService();
         innerClassContainer();
