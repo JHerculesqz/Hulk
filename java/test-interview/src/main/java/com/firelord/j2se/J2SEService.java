@@ -239,9 +239,9 @@ public class J2SEService {
 
     //#endregion
 
-    //#region testFloat
+    //#region testStr
 
-    public static void testFloat() {
+    public void testStr(){
         String s = "123456";
         String s1 = "123456";
         String s2 = "123" + "456";
@@ -250,6 +250,14 @@ public class J2SEService {
         System.out.print(s == s1);
         System.out.print(s == s2);
         System.out.print(s == s4);
+    }
+
+    //#endregion
+
+    //#region testFloat
+
+    public static void testFloat() {
+
         String str11 = Integer.toString(3);
         System.out.print(new Integer(42) == new Integer(42));
         for (int i = 0; i < 100; i++) {

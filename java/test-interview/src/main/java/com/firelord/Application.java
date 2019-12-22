@@ -6,8 +6,9 @@ import java.io.IOException;
 
 public class Application {
     public static void main(String[] args) throws IOException {
+//        J2SEService.testStr();
 //        J2SEService.testArrays();
-        J2SEService.testExtendsSuper();
+//        J2SEService.testExtendsSuper();
 //        J2SEService.testBigEndian();
 //        J2SEService.testFormalAndActualParameter();
 //        new J2SEService().testGetClassName();
@@ -15,7 +16,7 @@ public class Application {
 //        System.out.println(oB.num);
 //        J2SEService.testBreak();
 //        J2SEService.testEncode();
-//        J2SEService.testFloat();
+        J2SEService.testFloat();
 //        WCSRService.testProxy();
 //        WCSRService.testDecorator();
 //        WCSRService.testAdapter();
