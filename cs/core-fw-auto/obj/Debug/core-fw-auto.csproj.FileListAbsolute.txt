@@ -1,0 +1,9 @@
+C:\1.Monkey\1.Research\4.SCMGit\Hulk-ultimate\cs\bin\AutoItX3.dll
+C:\1.Monkey\1.Research\4.SCMGit\Hulk-ultimate\cs\bin\AutoItX3_x64.dll
+C:\1.Monkey\1.Research\4.SCMGit\Hulk-ultimate\cs\bin\NLog.config
+C:\1.Monkey\1.Research\4.SCMGit\Hulk-ultimate\cs\bin\core-fw-auto.dll
+C:\1.Monkey\1.Research\4.SCMGit\Hulk-ultimate\cs\bin\core-fw-auto.pdb
+C:\1.Monkey\1.Research\4.SCMGit\Hulk-ultimate\cs\core-fw-auto\obj\Debug\core-fw-auto.csprojAssemblyReference.cache
+C:\1.Monkey\1.Research\4.SCMGit\Hulk-ultimate\cs\core-fw-auto\obj\Debug\core-fw-auto.csproj.CopyComplete
+C:\1.Monkey\1.Research\4.SCMGit\Hulk-ultimate\cs\core-fw-auto\obj\Debug\core-fw-auto.dll
+C:\1.Monkey\1.Research\4.SCMGit\Hulk-ultimate\cs\core-fw-auto\obj\Debug\core-fw-auto.pdb
