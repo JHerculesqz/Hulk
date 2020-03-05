@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <title layout:title-pattern="$CONTENT_TITLE - $LAYOUT_TITLE">Default</title>
+    <!--<link rel="stylesheet" type="text/css" th:href="@{/lib/bootstrap/css/bootstrap.min.css}">-->
+    <!--<link rel="stylesheet" type="text/css" th:href="@{/lib/bootstrap/css/bootstrap-theme.min.css}">-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/header.css}">
+    <script th:src="@{/lib/jquery/jquery.min.js}"></script>
+    <!--<script th:src="@{/lib/bootstrap/js/bootstrap.min.js}"></script>-->
+</head>
+<body>
+<div class="navBarInTop">
+    <div class="navBarInTopContainer">
+        <div class="navBarInTopSession">
+            <div id="switchBtn" class="switchBtn">
+                <span class="switchMenu"></span>
+            </div>
+            <a class="logo" href="/">
+                <img class="logoPic" th:src="${prodLogoImgUrl}"/>
+            </a>
+        </div>
+        <div id="navBarMenus" class="navBarMenus dpnNav">
+            <ul class="navBarMenusContainer">
+                <li class="menuItem" th:if="${resourceIdLst.contains('home')}">
+                    <a href="/">Home</a>
+                </li>
+                <li class="menuItem" th:if="${resourceIdLst.contains('page1')}">
+                    <a href="/page1">Page1</a>
+                </li>
+                <li class="subMenuArea" th:if="${resourceIdLst.contains('system')}">
+                    <a id="subMenuTitle" href="#" class="subMenuTitle">
+                        System
+                        <div class="caret"></div>
+                    </a>
+                    <ul id="subMenu" class="subMenuContainer dpn">
+                        <li class="subMenuItem" th:if="${resourceIdLst.contains('usermgr')}">
+                            <a href="/usermgr">user management</a>
+                        </li>
+                        <li class="subMenuItem" th:if="${resourceIdLst.contains('systemmgr')}">
+                            <a href="/systemmgr">system management</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="rightMenuArea">
+                <li class="rightMenuItem" th:if="${userIdentify.contains('anonymous')}">
+                    <form th:action="@{/signout}" method="post">
+                        <input class="signOutStyle" type="submit" value="Sign In"/>
+                    </form>
+                </li>
+                <li class="rightMenuItem" th:if="${!userIdentify.contains('anonymous')}">
+                    <a th:text="${userIdentify}"></a>
+                </li>
+                <li class="rightMenuItem" th:if="${!userIdentify.contains('anonymous')}">
+                    <form th:action="@{/signout}" method="post">
+                        <input class="signOutStyle" type="submit" value="Sign Out"/>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("body").click(function (e) {
+            hideAllMenu(e);
+        });
+        $("#switchBtn").click(function (e) {
+            showOrHideMenu(e);
+        });
+        if ($("#subMenuTitle")) {
+            $("#subMenuTitle").click(function (e) {
+                showOrHideSubMenu(e);
+            });
+        }
+
+        function showOrHideSubMenu(e) {
+            e.stopPropagation();
+            var subMenuArea = $("#subMenu");
+            if (subMenuArea.hasClass("dpn")) {
+                subMenuArea.removeClass("dpn");
+                //设置样式
+                $("#subMenuTitle").addClass("active");
+            } else {
+                subMenuArea.addClass("dpn");
+                $("#subMenuTitle").removeClass("active");
+                //设置样式
+            }
+        }
+
+        function showOrHideMenu(e) {
+            e.stopPropagation();
+            var menuArea = $('#navBarMenus');
+            if (menuArea.hasClass("dpnNav")) {
+                menuArea.removeClass("dpnNav");
+            } else {
+                menuArea.addClass("dpnNav");
+            }
+        }
+
+        function hideAllMenu() {
+            var subMenuArea = $('#subMenu');
+            subMenuArea.addClass("dpn");
+
+            var menuArea = $('#navBarMenus');
+            menuArea.addClass("dpnNav");
+        }
+    });
+</script>
+<div class="contentArea">
+    <div layout:fragment="content"></div>
+</div>
+</body>
+</html>

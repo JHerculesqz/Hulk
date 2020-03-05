@@ -14,15 +14,7 @@ namespace core_fw.component.misc.log
     {
         #region Const
 
-        public const string LEVEL_FATAL = "Fatal";
-        public const string LEVEL_ERROR = "Error";
-        public const string LEVEL_WARN = "Warn";
-        public const string LEVEL_INFO = "Info";
-        public const string LEVEL_DEBUG = "Debug";
-        public const string LEVEL_TRACE = "Trace";
-
         private const string TEMPLATE_FILELOG = "[{0}]{1}";
-        private const string TEMPLATE_USERLOG = "[{0}u]{1}";
 
         #endregion
 

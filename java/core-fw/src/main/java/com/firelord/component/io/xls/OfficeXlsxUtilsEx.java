@@ -1,5 +1,11 @@
 package com.firelord.component.io.xls;
 
+import jodd.typeconverter.Convert;
+import org.apache.poi.EncryptedDocumentException;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.ss.util.CellUtil;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -9,179 +15,177 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.poi.EncryptedDocumentException;
-import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
-import org.apache.poi.ss.usermodel.BorderStyle;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.IndexedColors;
-import org.apache.poi.ss.usermodel.RichTextString;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
-import org.apache.poi.ss.util.CellUtil;
-
 public class OfficeXlsxUtilsEx {
-	// #region getWorkBook
+    // #region getWorkBook
 
-	public static Workbook getWorkBook(String strFilePath)
-			throws EncryptedDocumentException, InvalidFormatException, IOException {
-		Workbook oWorkbook = WorkbookFactory.create(new File(strFilePath));
-		return oWorkbook;
-	}
+    public static Workbook getWorkBook(String strFilePath)
+            throws EncryptedDocumentException, InvalidFormatException, IOException {
+        Workbook oWorkbook = WorkbookFactory.create(new File(strFilePath));
+        return oWorkbook;
+    }
 
-	public static Workbook getWorkBook4Write(String strFilePath)
-			throws EncryptedDocumentException, InvalidFormatException, IOException {
-		Workbook oWorkbook = WorkbookFactory.create(new FileInputStream(strFilePath));
-		return oWorkbook;
-	}
+    public static Workbook getWorkBook4Write(String strFilePath)
+            throws EncryptedDocumentException, InvalidFormatException, IOException {
+        Workbook oWorkbook = WorkbookFactory.create(new FileInputStream(strFilePath));
+        return oWorkbook;
+    }
 
-	// #endregion
+    // #endregion
 
-	// #region getSheet
+    // #region getSheet
 
-	public static Sheet getSheet(int iSheetIndex, Workbook oWorkbook) {
-		Sheet oSheet = oWorkbook.getSheetAt(iSheetIndex);
-		return oSheet;
-	}
+    public static Sheet getSheet(int iSheetIndex, Workbook oWorkbook) {
+        Sheet oSheet = oWorkbook.getSheetAt(iSheetIndex);
+        return oSheet;
+    }
 
-	// #endregion
+    // #endregion
 
-	// #region getRowStartIndex
+    // #region getRowStartIndex
 
-	public static int getRowStartIndex(Sheet oSheet) {
-		return oSheet.getFirstRowNum();
-	}
+    public static int getRowStartIndex(Sheet oSheet) {
+        return oSheet.getFirstRowNum();
+    }
 
-	// #endregion
+    // #endregion
 
-	// #region getRowCount
+    // #region getRowCount
 
-	public static int getRowCount(Sheet oSheet) {
-		return oSheet.getPhysicalNumberOfRows();
-	}
+    public static int getRowCount(Sheet oSheet) {
+        return oSheet.getPhysicalNumberOfRows();
+    }
 
-	// #endregion
+    // #endregion
 
-	// #region getRow
+    // #region getRow
 
-	public static Row getRow(int iRowIndex, Sheet oSheet) {
-		return oSheet.getRow(iRowIndex);
-	}
+    public static Row getRow(int iRowIndex, Sheet oSheet) {
+        return oSheet.getRow(iRowIndex);
+    }
 
-	// #endregion
+    // #endregion
 
-	// #region getColumnStartIndex
+    // #region getColumnStartIndex
 
-	public static int getColumnStartIndex(Row oRow) {
-		return oRow.getFirstCellNum();
-	}
+    public static int getColumnStartIndex(Row oRow) {
+        return oRow.getFirstCellNum();
+    }
 
-	// #endregion
+    // #endregion
 
-	// #region getColumnCount
+    // #region getColumnCount
 
-	public static int getColumnCount(Row oRow) {
-		return oRow.getPhysicalNumberOfCells();
-	}
+    public static int getColumnCount(Row oRow) {
+        return oRow.getPhysicalNumberOfCells();
+    }
 
-	// #endregion
+    // #endregion
 
-	// #region getCell
+    // #region getCell
 
-	public static Cell getCell(int iColumnIndex, Row oRow) {
-		return oRow.getCell(iColumnIndex);
-	}
+    public static Cell getCell(int iColumnIndex, Row oRow) {
+        return oRow.getCell(iColumnIndex);
+    }
 
-	// #endregion
+    public static String getCell4Integer(int iColumnIndex, Row oRow, boolean bRemovePoint) {
+        String strRes = Convert.toString(getCell(iColumnIndex, oRow));
+        if (bRemovePoint) {
+            if (strRes.contains(".")) {
+                strRes = strRes.substring(0, strRes.indexOf("."));
+            }
+        }
+        return strRes;
+    }
 
-	// #region killMe
+    // #endregion
 
-	public static void killMe(Workbook oWorkbook) throws IOException {
-		oWorkbook.close();
-	}
+    // #region killMe
 
-	// #endregion
+    public static void killMe(Workbook oWorkbook) throws IOException {
+        oWorkbook.close();
+    }
 
-	// #region saveAs
+    // #endregion
 
-	public static void saveAs(Workbook oWorkbook, String strFilePath) throws IOException {
-		FileOutputStream oFileOutputStream = new FileOutputStream(strFilePath);
-		oWorkbook.write(oFileOutputStream);
-		oFileOutputStream.close();
-	}
+    // #region saveAs
 
-	// #endregion
+    public static void saveAs(Workbook oWorkbook, String strFilePath) throws IOException {
+        FileOutputStream oFileOutputStream = new FileOutputStream(strFilePath);
+        oWorkbook.write(oFileOutputStream);
+        oFileOutputStream.close();
+    }
 
-	// #region createRow
+    // #endregion
 
-	public static Row createRow(Sheet oSheet, int iRowIndex) {
-		Row oRow = oSheet.createRow((short) iRowIndex);
-		return oRow;
-	}
+    // #region createRow
 
-	// #endregion
+    public static Row createRow(Sheet oSheet, int iRowIndex) {
+        Row oRow = oSheet.createRow((short) iRowIndex);
+        return oRow;
+    }
 
-	// #region createCell
+    // #endregion
 
-	public static Cell createCell(Row oRow, int iColIndex) {
-		Cell oCell = oRow.createCell((short) iColIndex);
-		return oCell;
-	}
+    // #region createCell
 
-	// #endregion
+    public static Cell createCell(Row oRow, int iColIndex) {
+        Cell oCell = oRow.createCell((short) iColIndex);
+        return oCell;
+    }
 
-	// #region setCellVal
+    // #endregion
 
-	public static void setCellVal(Cell oCell, double val) {
-		oCell.setCellValue(val);
-	}
+    // #region setCellVal
 
-	public static void setCellVal(Cell oCell, Date val) {
-		oCell.setCellValue(val);
-	}
+    public static void setCellVal(Cell oCell, double val) {
+        oCell.setCellValue(val);
+    }
 
-	public static void setCellVal(Cell oCell, Calendar val) {
-		oCell.setCellValue(val);
-	}
+    public static void setCellVal(Cell oCell, Date val) {
+        oCell.setCellValue(val);
+    }
 
-	public static void setCellVal(Cell oCell, RichTextString val) {
-		oCell.setCellValue(val);
-	}
+    public static void setCellVal(Cell oCell, Calendar val) {
+        oCell.setCellValue(val);
+    }
 
-	public static void setCellVal(Cell oCell, String val) {
-		oCell.setCellValue(val);
-	}
+    public static void setCellVal(Cell oCell, RichTextString val) {
+        oCell.setCellValue(val);
+    }
 
-	public static void setCellVal(Cell oCell, boolean val) {
-		oCell.setCellValue(val);
-	}
+    public static void setCellVal(Cell oCell, String val) {
+        oCell.setCellValue(val);
+    }
 
-	// #endregion
+    public static void setCellVal(Cell oCell, boolean val) {
+        oCell.setCellValue(val);
+    }
 
-	// #region setCellStyle
+    // #endregion
 
-	public static Map<String, Object> initCellBorder() {
-		Map<String, Object> oProps = new HashMap<String, Object>();
+    // #region setCellStyle
 
-		// border around a cell
-		oProps.put(CellUtil.BORDER_TOP, BorderStyle.THIN);
-		oProps.put(CellUtil.BORDER_BOTTOM, BorderStyle.THIN);
-		oProps.put(CellUtil.BORDER_LEFT, BorderStyle.THIN);
-		oProps.put(CellUtil.BORDER_RIGHT, BorderStyle.THIN);
+    public static Map<String, Object> initCellBorder() {
+        Map<String, Object> oProps = new HashMap<String, Object>();
 
-		// Give it a color
-		oProps.put(CellUtil.TOP_BORDER_COLOR, IndexedColors.GREY_25_PERCENT.getIndex());
-		oProps.put(CellUtil.BOTTOM_BORDER_COLOR, IndexedColors.GREY_25_PERCENT.getIndex());
-		oProps.put(CellUtil.LEFT_BORDER_COLOR, IndexedColors.GREY_25_PERCENT.getIndex());
-		oProps.put(CellUtil.RIGHT_BORDER_COLOR, IndexedColors.GREY_25_PERCENT.getIndex());
+        // border around a cell
+        oProps.put(CellUtil.BORDER_TOP, BorderStyle.THIN);
+        oProps.put(CellUtil.BORDER_BOTTOM, BorderStyle.THIN);
+        oProps.put(CellUtil.BORDER_LEFT, BorderStyle.THIN);
+        oProps.put(CellUtil.BORDER_RIGHT, BorderStyle.THIN);
 
-		return oProps;
-	}
+        // Give it a color
+        oProps.put(CellUtil.TOP_BORDER_COLOR, IndexedColors.GREY_25_PERCENT.getIndex());
+        oProps.put(CellUtil.BOTTOM_BORDER_COLOR, IndexedColors.GREY_25_PERCENT.getIndex());
+        oProps.put(CellUtil.LEFT_BORDER_COLOR, IndexedColors.GREY_25_PERCENT.getIndex());
+        oProps.put(CellUtil.RIGHT_BORDER_COLOR, IndexedColors.GREY_25_PERCENT.getIndex());
 
-	public static void applyCellStyle(Cell oCell, Map<String, Object> oProps) {
-		CellUtil.setCellStyleProperties(oCell, oProps);
-	}
+        return oProps;
+    }
 
-	// #endregion
+    public static void applyCellStyle(Cell oCell, Map<String, Object> oProps) {
+        CellUtil.setCellStyleProperties(oCell, oProps);
+    }
+
+    // #endregion
 }

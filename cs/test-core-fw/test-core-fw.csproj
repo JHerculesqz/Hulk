@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{619AB27C-A5AF-43E9-ADFA-EEBE4AE49496}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>test_core_fw</RootNamespace>
+    <AssemblyName>test-core-fw</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.6.8\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="component\ds\str\TestObj.cs" />
+    <Compile Include="component\io\mq\devCmd\DevCmdDemo.cs" />
+    <Compile Include="component\io\mq\prod_cons\ProdConsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="component\io\mq\prod_cons\ProdConsPanel.Designer.cs">
+      <DependentUpon>ProdConsPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="component\io\mq\zero\ZeroMQDemo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="component\io\mq\zero\ZeroMQDemo.Designer.cs">
+      <DependentUpon>ZeroMQDemo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="component\io\path\PathForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="component\io\path\PathForm.Designer.cs">
+      <DependentUpon>PathForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="component\io\udp\UDPDemo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="component\io\udp\UDPDemo.Designer.cs">
+      <DependentUpon>UDPDemo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="component\io\usb\UsbDemo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="component\io\usb\UsbDemo.Designer.cs">
+      <DependentUpon>UsbDemo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="component\i18n\LanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="component\i18n\LanForm.Designer.cs">
+      <DependentUpon>LanForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="component\misc\log\SysLogUtilsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="component\misc\log\SysLogUtilsForm.Designer.cs">
+      <DependentUpon>SysLogUtilsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="widgetX\FLBtnTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="widgetX\FLBtnTest.Designer.cs">
+      <DependentUpon>FLBtnTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="widgetX\FLControlBaseTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="widgetX\FLControlBaseTest.Designer.cs">
+      <DependentUpon>FLControlBaseTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="widget\grid\GridControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="widget\grid\GridControl.Designer.cs">
+      <DependentUpon>GridControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="widget\pgrid\PGridForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="widget\pgrid\PGridForm.Designer.cs">
+      <DependentUpon>PGridForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="widget\splash\SplashDemo.cs" />
+    <EmbeddedResource Include="component\io\mq\prod_cons\ProdConsPanel.resx">
+      <DependentUpon>ProdConsPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="component\io\mq\zero\ZeroMQDemo.resx">
+      <DependentUpon>ZeroMQDemo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="component\io\path\PathForm.resx">
+      <DependentUpon>PathForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="component\io\udp\UDPDemo.resx">
+      <DependentUpon>UDPDemo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="component\io\usb\UsbDemo.resx">
+      <DependentUpon>UsbDemo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="component\i18n\LanForm.en.resx">
+      <DependentUpon>LanForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="component\i18n\LanForm.resx">
+      <DependentUpon>LanForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="component\i18n\LanForm.zh.resx">
+      <DependentUpon>LanForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="component\misc\log\SysLogUtilsForm.resx">
+      <DependentUpon>SysLogUtilsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resource.en.resx" />
+    <EmbeddedResource Include="Properties\Resource.zh.resx" />
+    <EmbeddedResource Include="Properties\Resources.resx" />
+    <EmbeddedResource Include="widgetX\FLBtnTest.resx">
+      <DependentUpon>FLBtnTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="widgetX\FLControlBaseTest.resx">
+      <DependentUpon>FLControlBaseTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="widget\grid\GridControl.resx">
+      <DependentUpon>GridControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="widget\pgrid\PGridForm.resx">
+      <DependentUpon>PGridForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="data\config\i18n.ini">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\lan.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="core\README.txt" />
+    <Content Include="data\images\splash1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\core-fw\core-fw.csproj">
+      <Project>{e24974d4-c341-4f04-a273-9a16e506f6b1}</Project>
+      <Name>core-fw</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

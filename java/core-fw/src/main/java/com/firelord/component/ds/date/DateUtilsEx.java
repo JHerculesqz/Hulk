@@ -24,6 +24,9 @@ public class DateUtilsEx {
     public static final String FORMAT5 = "YYYYMMDD_hhmmssmss";
     public static final String FORMAT6 = "hh:mm:ss";
 
+    public static final String JDK_FORMAT1 = "yyyy-MM-dd HH:mm:ss";
+    public static final String JDK_FORMAT2 = "yyyy-MM-dd";
+
     //#endregion
 
     //#region common
@@ -314,12 +317,30 @@ public class DateUtilsEx {
     //#region dateToStr
 
     public static String dateToStr(Date oDate, String strFormat) {
-        if(null == oDate){
+        if (null == oDate) {
             return "";
         }
 
         SimpleDateFormat oSimpleDateFormat = new SimpleDateFormat(strFormat);
         return oSimpleDateFormat.format(oDate);
+    }
+
+    public static String transFormat(String strDateSrc, String strFormatSrc, String strFormatDst) {
+        if (strDateSrc.isEmpty()) {
+            return "";
+        }
+
+        String strRes = "";
+        try {
+            SimpleDateFormat oSimpleDateFormatSrc = new SimpleDateFormat(strFormatSrc);
+            Date oDateSrc = oSimpleDateFormatSrc.parse(strDateSrc);
+            SimpleDateFormat oSimpleDateFormatDst = new SimpleDateFormat(strFormatDst);
+            strRes = oSimpleDateFormatDst.format(oDateSrc);
+        } catch (ParseException e) {
+            System.out.println("[DateUtilsEx.transFormat]error...");
+        } finally {
+            return strRes;
+        }
     }
 
     //#endregion

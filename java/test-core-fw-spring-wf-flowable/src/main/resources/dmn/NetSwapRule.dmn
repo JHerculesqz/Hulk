@@ -1,0 +1,50 @@
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101" id="definition_d8da3197-51fb-11e9-aee3-aeb6d0d021b1" name="NetSwapRule" namespace="http://www.flowable.org/dmn">
+  <decision id="NetSwapRule" name="NetSwapRule">
+    <decisionTable id="decisionTable_d8da3197-51fb-11e9-aee3-aeb6d0d021b1" hitPolicy="FIRST">
+      <input label="业务是否有保护路径">
+        <inputExpression id="inputExpression_inputExpression_6" typeRef="string">
+          <text>trafficHasProtect</text>
+        </inputExpression>
+      </input>
+      <input label="业务的工作路由和保护路由使用同一个目标网元环插">
+        <inputExpression id="inputExpression_inputExpression_7" typeRef="string">
+          <text>workPathAndProtectPathSwapOnSameNe</text>
+        </inputExpression>
+      </input>
+      <output id="outputExpression_outputExpression_8" label="交叉类型" name="crossType" typeRef="string"></output>
+      <rule>
+        <inputEntry id="inputEntry_inputExpression_6_1">
+          <text><![CDATA[== "true"]]></text>
+        </inputEntry>
+        <inputEntry id="inputEntry_inputExpression_7_1">
+          <text><![CDATA[== "true"]]></text>
+        </inputEntry>
+        <outputEntry id="outputEntry_outputExpression_8_1">
+          <text><![CDATA["XQH"]]></text>
+        </outputEntry>
+      </rule>
+      <rule>
+        <inputEntry id="inputEntry_inputExpression_6_2">
+          <text><![CDATA[== "true"]]></text>
+        </inputEntry>
+        <inputEntry id="inputEntry_inputExpression_7_2">
+          <text><![CDATA[== "false"]]></text>
+        </inputEntry>
+        <outputEntry id="outputEntry_outputExpression_8_2">
+          <text><![CDATA["Normal"]]></text>
+        </outputEntry>
+      </rule>
+      <rule>
+        <inputEntry id="inputEntry_inputExpression_6_3">
+          <text><![CDATA[== "false"]]></text>
+        </inputEntry>
+        <inputEntry id="inputEntry_inputExpression_7_3">
+          <text><![CDATA[-]]></text>
+        </inputEntry>
+        <outputEntry id="outputEntry_outputExpression_8_3">
+          <text><![CDATA["Normal"]]></text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>
