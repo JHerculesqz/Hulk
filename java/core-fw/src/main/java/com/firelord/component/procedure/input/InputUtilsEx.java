@@ -1,11 +1,12 @@
-package com.firelord.component.ds.obj;
+package com.firelord.component.procedure.input;
 
 import java.util.Objects;
+import java.util.Optional;
 
 /**
- * ObjUtils
+ * InputUtilsEx
  */
-public class ObjUtils {
+public class InputUtilsEx {
     //#region validate
 
     /**
@@ -58,6 +59,20 @@ public class ObjUtils {
             throw new IllegalArgumentException(message);
         }
     }
+
+    /**
+     * Return the value if present, otherwise return {@code defaultVal}.
+     *
+     * @param obj        the possibly-null value to describe
+     * @param defaultVal the value to be returned if there is no value present, may be null
+     * @param <T>        the type of the reference
+     * @return the value, if present, otherwise {@code defaultVal}
+     */
+    public static <T> T checkNullOrSetDefaultVal(T obj, T defaultVal) {
+        return Optional.ofNullable(obj).orElse(defaultVal);
+    }
+
+
 
     //#endregion
 }
